@@ -1,4 +1,5 @@
 import Layout from '../common/Layout';
+import Popup from '../common/Popup';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -17,37 +18,43 @@ function Youtube() {
 		});
 	}, []);
 
-	return (
-		<Layout name={'Youtube'}>
-			{Vids.map((data, idx) => {
-				return (
-					<article key={data.id}>
-						<div className='img'>
-							<img
-								src={data.snippet.thumbnails.maxres.url}
-								alt={data.snippet.title}
-							/>
-						</div>
-						<div className='txt'>
-							<h2>
-								{data.snippet.title.length > 30
-									? data.snippet.title.substr(0, 30) + '...'
-									: data.snippet.title}
-							</h2>
+	const [Open, setOpen] = useState(false);
 
-							<div className='info'>
-								<p>
-									{data.snippet.description.length > 200
-										? data.snippet.description.substr(0, 200) + '...'
-										: data.snippet.description}
-								</p>
-								<span>{data.snippet.publishedAt.split('T')[0]}</span>
+	return (
+		<>
+			<Layout name={'Youtube'}>
+				{Vids.map((data, idx) => {
+					return (
+						<article key={data.id}>
+							<div className='img'>
+								<img
+									src={data.snippet.thumbnails.maxres.url}
+									alt={data.snippet.title}
+									onClick={() => setOpen(true)}
+								/>
 							</div>
-						</div>
-					</article>
-				);
-			})}
-		</Layout>
+							<div className='txt'>
+								<h2>
+									{data.snippet.title.length > 30
+										? data.snippet.title.substr(0, 30) + '...'
+										: data.snippet.title}
+								</h2>
+
+								<div className='info'>
+									<p>
+										{data.snippet.description.length > 200
+											? data.snippet.description.substr(0, 200) + '...'
+											: data.snippet.description}
+									</p>
+									<span>{data.snippet.publishedAt.split('T')[0]}</span>
+								</div>
+							</div>
+						</article>
+					);
+				})}
+			</Layout>
+			{Open && <Popup setOpen={setOpen}></Popup>}
+		</>
 	);
 }
 

@@ -2,6 +2,7 @@ import Layout from '../common/Layout';
 import { useRef, useEffect } from 'react';
 
 function Location() {
+	// map
 	const { kakao } = window;
 	const container = useRef(null);
 	const opt = {
@@ -9,6 +10,7 @@ function Location() {
 		level: 3,
 	};
 
+	// marker
 	const markerPosition = opt.center;
 	const marker = new kakao.maps.Marker({
 		position: markerPosition,
