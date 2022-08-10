@@ -7,7 +7,7 @@ function Department() {
 
 	useEffect(() => {
 		axios.get(process.env.PUBLIC_URL + '/DB/members.json').then((json) => {
-			console.log(json.data.members);
+			// console.log(json.data.members);
 			setMembers(json.data.members);
 		});
 	}, []);
