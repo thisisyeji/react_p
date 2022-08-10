@@ -37,7 +37,8 @@ function App() {
 			<Route path='/location' component={Location} />
 			<Route path='/community' component={Community} />
 			<Route path='/members' component={Members} />
-			<Route path='/footer' component={Footer} />
+
+			<Footer />
 		</>
 	);
 }
