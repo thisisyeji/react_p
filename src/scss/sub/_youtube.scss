@@ -1,0 +1,57 @@
+.Youtube {
+	width: 100%;
+
+	article {
+		width: 100%;
+		height: 300px;
+		margin-bottom: 30px;
+
+		display: flex;
+
+		.img {
+			width: 50%;
+			height: 100%;
+			padding: 10px;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.txt {
+			width: 50%;
+			height: 100%;
+			padding: 10px;
+
+			display: flex;
+			flex-wrap: wrap;
+			align-items: space-between;
+
+			h2 {
+				color: #333;
+				font-weight: 100;
+				word-break: break-all;
+			}
+
+			.info {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: space-between;
+
+				p {
+					color: #777;
+					font-style: italic;
+					word-break: break-all;
+				}
+
+				span {
+					width: 100%;
+					color: #333;
+					text-align: right;
+				}
+			}
+		}
+	}
+}
