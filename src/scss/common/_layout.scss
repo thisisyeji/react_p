@@ -1,0 +1,21 @@
+.content {
+	width: 100%;
+
+	figure {
+		width: 100%;
+		height: 300px;
+		padding: 0 10vw;
+		background: #777;
+
+		h1 {
+			color: #fff;
+			font-size: 100px;
+		}
+	}
+
+	.inner {
+		width: 100%;
+		min-height: 500px;
+		padding: 10vw;
+	}
+}

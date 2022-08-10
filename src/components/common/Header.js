@@ -15,7 +15,7 @@ function Header() {
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to='.youtube' activeStyle={style}>
+					<NavLink to='/youtube' activeStyle={style}>
 						YOUTUBE
 					</NavLink>
 				</li>
