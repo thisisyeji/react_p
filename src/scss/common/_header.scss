@@ -51,6 +51,22 @@ header {
 		.fa-face-smile {
 			font-size: 22px;
 			padding: 12px;
+			transition: 1s;
+
+			path {
+				fill: #777;
+				stroke-width: 5px;
+				stroke-dasharray: 2000;
+				stroke-dashoffset: 2000;
+				transition: 1s;
+			}
+
+			&:hover {
+				transform: scale(1.1);
+				path {
+					fill: #333;
+				}
+			}
 		}
 
 		.social {
