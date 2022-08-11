@@ -1,3 +1,8 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFaceSmile } from '@fortawesome/free-regular-svg-icons';
 import { Link, NavLink } from 'react-router-dom';
 
 function Header() {
@@ -40,6 +45,21 @@ function Header() {
 					</NavLink>
 				</li>
 			</ul>
+
+			<div className='gnb_right'>
+				<FontAwesomeIcon icon={faFaceSmile} />
+				<ul className='social'>
+					<li>
+						<FontAwesomeIcon icon={faTwitter} />
+					</li>
+					<li>
+						<FontAwesomeIcon icon={faFacebookF} />
+					</li>
+					<li>
+						<FontAwesomeIcon icon={faInstagram} />
+					</li>
+				</ul>
+			</div>
 		</header>
 	);
 }
