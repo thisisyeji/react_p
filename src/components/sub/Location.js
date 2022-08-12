@@ -11,9 +11,9 @@ function Location() {
 	};
 
 	// 교통정보
-	const [Traffic, setTraffic] = useState(null);
+	const [Location, setLocation] = useState(null);
 	// 교통 정보 토글을 위한 불리언 값
-	const [TraToggle, setTraToggle] = useState(false);
+	const [Traffic, setTraffic] = useState(false);
 
 	// marker image
 	const imgSrc = process.env.PUBLIC_URL + '/img/marker1.png'; // 마커이미지
@@ -31,21 +31,31 @@ function Location() {
 	useEffect(() => {
 		const map = new kakao.maps.Map(container.current, opt);
 		marker.setMap(map);
-		setTraffic(map);
+		setLocation(map);
+
+		// resize
+		const handleResize = () => {
+			map.setCenter(opt.center);
+		};
+
+		window.addEventListener('resize', handleResize);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
 	}, []);
 
 	useEffect(() => {
-		if (!Traffic) return;
-		TraToggle
-			? Traffic.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
-			: Traffic.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-	}, [TraToggle]);
+		if (!Location) return;
+		Traffic
+			? Location.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
+			: Location.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+	}, [Traffic]);
 
 	return (
 		<Layout name={'Location'}>
 			<div className='map' ref={container}></div>
-			<button onClick={() => setTraToggle(!TraToggle)}>
-				{TraToggle ? 'Traffic Off' : 'Traffic On'}
+			<button onClick={() => setTraffic(!Traffic)}>
+				{Traffic ? 'Traffic Off' : 'Traffic On'}
 			</button>
 		</Layout>
 	);
