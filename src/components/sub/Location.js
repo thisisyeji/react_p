@@ -29,9 +29,19 @@ function Location() {
 	});
 
 	useEffect(() => {
+		container.current.innerHTML = '';
+
 		const map = new kakao.maps.Map(container.current, opt);
 		marker.setMap(map);
 		setLocation(map);
+
+		// 지도타입 컨트롤 생성
+		const mapTypeControl = new kakao.maps.MapTypeControl();
+		map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPLEFT);
+
+		// 줌 컨트롤 생성
+		const zoomControl = new kakao.maps.ZoomControl();
+		map.addControl(zoomControl, kakao.maps.ControlPosition.LEFT);
 
 		// resize
 		const handleResize = () => {
