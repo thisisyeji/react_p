@@ -6,11 +6,18 @@ import { faFaceSmile } from '@fortawesome/free-regular-svg-icons';
 import { Link, NavLink } from 'react-router-dom';
 
 function Header() {
-	const style = { color: 'salmon' };
+	const path = process.env.PUBLIC_URL;
+	const style = {
+		color: 'rgb(255, 181, 0)',
+		border: '1px solid rgb(255, 181, 0)',
+	};
 	return (
 		<header>
 			<h1>
-				<Link to='/'>LOGO</Link>
+				<span className='hidden'>ACAUA DI PARMA</span>
+				<Link to='/'>
+					<img src={path + '/img/logo_ho.png'} alt='logo' />
+				</Link>
 			</h1>
 
 			<ul id='gnb'>

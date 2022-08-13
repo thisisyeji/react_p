@@ -12,7 +12,7 @@ function Footer() {
 			<div className='upper'>
 				<h1>
 					<p className='hidden'>ACQUA DI PARMA</p>
-					<img src={path + '/img/logo_v.png'} alt='logo' />
+					<img src={path + '/img/logo_ver.png'} alt='logo' />
 				</h1>
 
 				<ul className='left'>

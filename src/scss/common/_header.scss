@@ -2,18 +2,21 @@ header {
 	width: 100%;
 	height: 50px;
 	font-family: 'Prompt', sans-serif;
-	border-bottom: 1px solid #666;
+	border-bottom: 1px solid #b6a999;
 
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 
 	h1 {
-		font-size: 32px;
-		padding-left: 10vw;
+		height: 100%;
+		padding: 0 5vw;
+		background-color: rgb(255, 181, 0);
 
-		a {
-			color: #555;
+		img {
+			height: 35%;
+			object-fit: cover;
+			filter: invert(100%);
 		}
 	}
 
@@ -30,7 +33,17 @@ header {
 				font-size: 14px;
 				font-weight: 500;
 				letter-spacing: 1px;
+				border: 1px solid #fffcf0;
+				border-radius: 50%;
 				padding: 10px;
+				transition: 0.5s;
+			}
+
+			&:hover {
+				a {
+					border: 1px solid rgb(255, 181, 0);
+					border-radius: 50%;
+				}
 			}
 		}
 	}
@@ -45,7 +58,7 @@ header {
 		transition: 1s;
 
 		path {
-			fill: #777;
+			fill: rgb(255, 181, 0);
 			stroke-width: 5px;
 			stroke-dasharray: 2000;
 			stroke-dashoffset: 2000;
@@ -54,16 +67,13 @@ header {
 
 		&:hover {
 			transform: scale(1.1);
-			path {
-				fill: #333;
-			}
 		}
 	}
 
 	.gnb_right {
 		width: 50px;
 		height: 100vh;
-		border-left: 1px solid #666;
+		border-left: 1px solid #b6a999;
 
 		position: absolute;
 		top: 0;
@@ -76,15 +86,21 @@ header {
 
 		.social {
 			width: 100%;
-			border-top: 1px solid #666;
-			border-bottom: 1px solid #666;
+			border-top: 1px solid #b6a999;
+			border-bottom: 1px solid #b6a999;
 			li {
-				color: #333;
+				color: #666;
+				cursor: pointer;
+				transition: 0.5s;
 				padding: 10px;
 
 				display: flex;
 				justify-content: center;
 				align-items: center;
+
+				&:hover {
+					color: rgb(255, 181, 0);
+				}
 			}
 		}
 	}
