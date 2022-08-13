@@ -16,8 +16,11 @@ footer {
 
 		h1 {
 			width: 30%;
-			font-size: 36px;
-			color: #fff;
+			padding-right: 20px;
+			img {
+				width: 150px;
+				filter: brightness(30);
+			}
 		}
 
 		.left {
@@ -121,7 +124,7 @@ footer {
 				color: #444;
 
 				&:hover {
-					color: hotpink;
+					color: rgb(255, 181, 0);
 				}
 			}
 		}

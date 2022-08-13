@@ -10,7 +10,10 @@ function Footer() {
 	return (
 		<footer>
 			<div className='upper'>
-				<h1>LOGO</h1>
+				<h1>
+					<p className='hidden'>ACQUA DI PARMA</p>
+					<img src={path + '/img/logo_v.png'} alt='logo' />
+				</h1>
 
 				<ul className='left'>
 					<li>home</li>
