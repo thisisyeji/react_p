@@ -1,7 +1,6 @@
 header {
 	width: 100%;
 	height: 50px;
-	padding: 0 10vw;
 	font-family: 'Prompt', sans-serif;
 	border-bottom: 1px solid #666;
 
@@ -11,6 +10,7 @@ header {
 
 	h1 {
 		font-size: 32px;
+		padding-left: 10vw;
 
 		a {
 			color: #555;
@@ -22,6 +22,7 @@ header {
 		flex-wrap: wrap;
 		justify-content: space-between;
 		gap: 10px;
+		padding-right: 10vw;
 
 		li {
 			a {
@@ -30,6 +31,31 @@ header {
 				font-weight: 500;
 				letter-spacing: 1px;
 				padding: 10px;
+			}
+		}
+	}
+
+	.fa-face-smile {
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		z-index: 2;
+		font-size: 22px;
+		padding: 12px;
+		transition: 1s;
+
+		path {
+			fill: #777;
+			stroke-width: 5px;
+			stroke-dasharray: 2000;
+			stroke-dashoffset: 2000;
+			transition: 1s;
+		}
+
+		&:hover {
+			transform: scale(1.1);
+			path {
+				fill: #333;
 			}
 		}
 	}
@@ -45,29 +71,8 @@ header {
 
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: flex-end;
 		align-items: center;
-
-		.fa-face-smile {
-			font-size: 22px;
-			padding: 12px;
-			transition: 1s;
-
-			path {
-				fill: #777;
-				stroke-width: 5px;
-				stroke-dasharray: 2000;
-				stroke-dashoffset: 2000;
-				transition: 1s;
-			}
-
-			&:hover {
-				transform: scale(1.1);
-				path {
-					fill: #333;
-				}
-			}
-		}
 
 		.social {
 			width: 100%;

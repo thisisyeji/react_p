@@ -8,7 +8,7 @@ import Footer from './components/common/Footer';
 import Visual from './components/main/Visual';
 
 //sub
-import Department from './components/sub/Department';
+import About from './components/sub/About';
 import Community from './components/sub/Community';
 import Gallery from './components/sub/Gallery';
 import Location from './components/sub/Location';
@@ -31,7 +31,7 @@ function App() {
 				</Route>
 			</Switch>
 
-			<Route path='/department' component={Department} />
+			<Route path='/about' component={About} />
 			<Route path='/youtube' component={Youtube} />
 			<Route path='/gallery' component={Gallery} />
 			<Route path='/location' component={Location} />

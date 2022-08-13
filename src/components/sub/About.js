@@ -2,7 +2,7 @@ import Layout from '../common/Layout';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-function Department() {
+function About() {
 	const [Members, setMembers] = useState([]);
 
 	useEffect(() => {
@@ -13,7 +13,7 @@ function Department() {
 	}, []);
 
 	return (
-		<Layout name={'Department'}>
+		<Layout name={'About'}>
 			{Members.map((member, idx) => {
 				return (
 					<article key={idx}>
@@ -33,4 +33,4 @@ function Department() {
 	);
 }
 
-export default Department;
+export default About;

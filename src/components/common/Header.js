@@ -15,8 +15,8 @@ function Header() {
 
 			<ul id='gnb'>
 				<li>
-					<NavLink to='/department' activeStyle={style}>
-						DEPARTMENT
+					<NavLink to='/about' activeStyle={style}>
+						ABOUT
 					</NavLink>
 				</li>
 				<li>
@@ -46,8 +46,9 @@ function Header() {
 				</li>
 			</ul>
 
+			<FontAwesomeIcon icon={faFaceSmile} />
+
 			<div className='gnb_right'>
-				<FontAwesomeIcon icon={faFaceSmile} />
 				<ul className='social'>
 					<li>
 						<FontAwesomeIcon icon={faTwitter} />
