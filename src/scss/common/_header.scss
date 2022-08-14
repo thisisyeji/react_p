@@ -49,7 +49,7 @@ header {
 	}
 
 	.fa-face-smile {
-		position: absolute;
+		position: fixed;
 		right: 0px;
 		top: 0px;
 		z-index: 2;
@@ -75,7 +75,7 @@ header {
 		height: 100vh;
 		border-left: 1px solid #b6a999;
 
-		position: absolute;
+		position: fixed;
 		top: 0;
 		right: 0;
 
