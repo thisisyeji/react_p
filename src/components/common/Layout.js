@@ -1,6 +1,13 @@
+import { useEffect, useRef } from 'react';
+
 function Layout({ name, children }) {
+	const frame = useRef();
+	useEffect(() => {
+		frame.current.classList.add('on');
+	}, []);
+
 	return (
-		<section className={`content ${name}`}>
+		<section className={`content ${name}`} ref={frame}>
 			<figure
 				style={{
 					backgroundImage: `url(${process.env.PUBLIC_URL}/img/${name}.jpg)`,

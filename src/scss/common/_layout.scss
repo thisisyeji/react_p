@@ -4,9 +4,11 @@
 	figure {
 		width: calc(100% - 50px);
 		height: 500px;
+		background: #777;
 		padding: 0 10vw;
 		margin-right: 50px;
-		background: #777;
+		opacity: 0;
+		transition: 1.3s;
 
 		position: absolute;
 		top: 0;
@@ -17,17 +19,36 @@
 
 		h1 {
 			color: #fff;
-			font-size: 100px;
+			font-size: 120px;
 			font-family: 'Bodoni Moda', serif;
 			font-weight: 300;
-			text-shadow: -3px 3px 8px rgba(0, 0, 0, 0.5), 3px 0 rgba(255, 181, 0, 0.7);
+			transform: translateX(-30px);
+			transition: all 1s, text-shadow 0.5s 0.5s;
+			opacity: 0;
 		}
 	}
 	.inner {
 		width: calc(100% - 50px);
 		min-height: 500px;
+		transform: translateY(50px);
 		padding: 10vw;
 		margin-top: 500px;
 		margin-right: 50px;
+		transition: 0.5s;
+	}
+}
+
+.content.on {
+	figure {
+		opacity: 1;
+
+		h1 {
+			text-shadow: -3px 3px 8px rgba(0, 0, 0, 0.5), 3px 0 rgba(255, 181, 0, 0.7);
+			transform: translateX(0px);
+			opacity: 1;
+		}
+	}
+	> .inner {
+		transform: translateY(0px);
 	}
 }
