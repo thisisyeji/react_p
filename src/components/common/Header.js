@@ -1,3 +1,4 @@
+import { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
@@ -6,6 +7,8 @@ import { faFaceSmile } from '@fortawesome/free-regular-svg-icons';
 import { Link, NavLink } from 'react-router-dom';
 
 function Header({ type }) {
+	const gnbMo = useRef(null);
+
 	const path = process.env.PUBLIC_URL;
 	const style = {
 		color: 'rgb(255, 181, 0)',
@@ -54,7 +57,12 @@ function Header({ type }) {
 				</li>
 			</ul>
 
-			<FontAwesomeIcon icon={faFaceSmile} />
+			<FontAwesomeIcon
+				icon={faFaceSmile}
+				onClick={() => {
+					gnbMo.current.classList.toggle('on');
+				}}
+			/>
 
 			<div className='gnb_right'>
 				<ul className='social'>
@@ -66,6 +74,69 @@ function Header({ type }) {
 					</li>
 					<li>
 						<FontAwesomeIcon icon={faInstagram} />
+					</li>
+				</ul>
+			</div>
+
+			<div className='mobile' ref={gnbMo}>
+				<Link to='/' className='logo_mo'>
+					<img src={path + '/img/logo_ho.png'} alt='logo' />
+				</Link>
+
+				<ul id='gnb_mo'>
+					<li>
+						<NavLink
+							to='/about'
+							onClick={() => {
+								gnbMo.current.classList.remove('on');
+							}}>
+							ABOUT
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to='/youtube'
+							onClick={() => {
+								gnbMo.current.classList.remove('on');
+							}}>
+							YOUTUBE
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to='/gallery'
+							onClick={() => {
+								gnbMo.current.classList.remove('on');
+							}}>
+							GALLERY
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to='/community'
+							onClick={() => {
+								gnbMo.current.classList.remove('on');
+							}}>
+							COMMUNITY
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to='/location'
+							onClick={() => {
+								gnbMo.current.classList.remove('on');
+							}}>
+							LOCATION
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to='/members'
+							onClick={() => {
+								gnbMo.current.classList.remove('on');
+							}}>
+							MEMBERS
+						</NavLink>
 					</li>
 				</ul>
 			</div>
