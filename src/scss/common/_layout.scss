@@ -33,7 +33,6 @@
 		transform: translateY(100px);
 		padding: 10vw;
 		margin-top: 500px;
-		margin-right: 50px;
 		transition: 1s;
 	}
 }
@@ -65,6 +64,11 @@
 				transform: translateY(100px);
 			}
 		}
+
+		.inner {
+			margin-top: 400px;
+			padding: 10vw 5vw;
+		}
 	}
 
 	.content.on {
@@ -89,7 +93,8 @@
 		}
 
 		.inner {
-			transform: translateY(50px);
+			margin-top: 350px;
+			padding: 10vw 5vw;
 		}
 	}
 
@@ -98,10 +103,6 @@
 			h1 {
 				transform: translateY(140px);
 			}
-		}
-
-		> .inner {
-			transform: translateY(-100px);
 		}
 	}
 }
