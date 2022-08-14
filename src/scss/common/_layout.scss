@@ -6,7 +6,6 @@
 		height: 500px;
 		background: #777;
 		padding: 0 10vw;
-		margin-right: 50px;
 		opacity: 0;
 		transition: 1.3s;
 
@@ -52,5 +51,57 @@
 	}
 	> .inner {
 		transform: translateY(0px);
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.content {
+		figure {
+			height: 400px;
+			padding: 0 5vw;
+
+			h1 {
+				font-size: 90px;
+				transform: translateY(100px);
+			}
+		}
+	}
+
+	.content.on {
+		figure {
+			h1 {
+				transform: translateY(190px);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.content {
+		figure {
+			height: 300px;
+			padding: 0 2vw;
+
+			h1 {
+				font-size: 60px;
+				transform: translateY(100px);
+			}
+		}
+
+		.inner {
+			transform: translateY(50px);
+		}
+	}
+
+	.content.on {
+		figure {
+			h1 {
+				transform: translateY(140px);
+			}
+		}
+
+		> .inner {
+			transform: translateY(-100px);
+		}
 	}
 }
