@@ -3,7 +3,7 @@ function Layout({ name, children }) {
 		<section className={`content ${name}`}>
 			<figure
 				style={{
-					backgroundImage: `url(${process.env.PUBLIC_URL}/img/${name}.jpg})`,
+					backgroundImage: `url(${process.env.PUBLIC_URL}/img/${name}.jpg)`,
 					backgroundAttachment: 'fixed',
 					backgroundPosition: 'center',
 					backgroundRepeat: 'no-repeat',
