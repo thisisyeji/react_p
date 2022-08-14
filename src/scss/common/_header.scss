@@ -151,11 +151,14 @@ header {
 				border-top: 2px solid transparent;
 				border-bottom: 2px solid transparent;
 				padding: 40px;
+				cursor: pointer;
 
 				display: flex;
 				align-items: center;
 
 				a {
+					display: block;
+					width: 100%;
 					color: #ddd;
 					font-size: 32px;
 					margin: 0 auto;
@@ -167,7 +170,7 @@ header {
 						display: block;
 						position: absolute;
 						bottom: 0;
-						left: 50%;
+						left: 30%;
 						width: 0%;
 						height: 2px;
 						background-color: rgb(255, 181, 0);
@@ -184,8 +187,7 @@ header {
 						color: rgb(255, 181, 0);
 
 						&::after {
-							width: 100%;
-							left: 0;
+							width: 30%;
 						}
 					}
 				}
