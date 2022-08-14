@@ -1,8 +1,18 @@
+import { useEffect } from 'react';
+
 function Popup({ setOpen, children }) {
+	useEffect(() => {
+		document.body.style.overflowY = 'hidden';
+
+		return () => {
+			document.body.style.overflowY = 'auto';
+		};
+	}, []);
+
 	return (
-		<aside>
+		<aside className='pop'>
 			<span
-				className='CLOSE'
+				className='close'
 				onClick={() => {
 					setOpen(false);
 				}}>

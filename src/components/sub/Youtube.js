@@ -5,6 +5,7 @@ import axios from 'axios';
 
 function Youtube() {
 	const [Vids, setVids] = useState([]);
+	const [Index, setIndex] = useState(0);
 
 	useEffect(() => {
 		const key = 'AIzaSyD1ZRgZNZXs590CNC6IbqqDi5RFFZNf1VM';
@@ -39,7 +40,6 @@ function Youtube() {
 									<img
 										src={data.snippet.thumbnails.maxres.url}
 										alt={data.snippet.title}
-										onClick={() => setOpen(true)}
 									/>
 								</div>
 
@@ -53,7 +53,12 @@ function Youtube() {
 								</div>
 							</div>
 
-							<div className='btns'>
+							<div
+								className='btns'
+								onClick={() => {
+									setOpen(true);
+									setIndex(idx);
+								}}>
 								<span>VIEW</span>
 								<div className='line'></div>
 							</div>
@@ -61,7 +66,14 @@ function Youtube() {
 					);
 				})}
 			</Layout>
-			{Open && <Popup setOpen={setOpen}></Popup>}
+			{Open && (
+				<Popup setOpen={setOpen}>
+					<iframe
+						src={`https://www.youtube.com/embed/${Vids[Index].snippet.resourceId.videoId}`}
+						frameBorder='0'
+						allowFullScreen></iframe>
+				</Popup>
+			)}
 		</>
 	);
 }
