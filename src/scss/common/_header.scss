@@ -4,6 +4,9 @@ header {
 	font-family: 'Prompt', sans-serif;
 	border-bottom: 1px solid #b6a999;
 
+	position: relative;
+	z-index: 2;
+
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -33,7 +36,9 @@ header {
 				font-size: 14px;
 				font-weight: 500;
 				letter-spacing: 1px;
-				border: 1px solid #fffcf0;
+				text-shadow: -1px 0 #fffcf0, 0 1px #fffcf0, 1px 0 #fffcf0,
+					0 -1px #fffcf0;
+				border: 1px solid transparent;
 				border-radius: 50%;
 				padding: 10px;
 				transition: 0.5s;
@@ -101,6 +106,19 @@ header {
 				&:hover {
 					color: rgb(255, 181, 0);
 				}
+			}
+		}
+	}
+}
+
+header.sub {
+	border-bottom: 1px solid transparent;
+
+	#gnb {
+		li {
+			a {
+				text-shadow: -1px 0 #efefef, 0 1px #efefef, 1px 0 #efefef,
+					0 -1px #efefef;
 			}
 		}
 	}

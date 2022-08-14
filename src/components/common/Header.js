@@ -5,14 +5,15 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faFaceSmile } from '@fortawesome/free-regular-svg-icons';
 import { Link, NavLink } from 'react-router-dom';
 
-function Header() {
+function Header({ type }) {
 	const path = process.env.PUBLIC_URL;
 	const style = {
 		color: 'rgb(255, 181, 0)',
 		border: '1px solid rgb(255, 181, 0)',
+		textShadow: 'none',
 	};
 	return (
-		<header>
+		<header className={type}>
 			<h1>
 				<span className='hidden'>ACAUA DI PARMA</span>
 				<Link to='/'>
