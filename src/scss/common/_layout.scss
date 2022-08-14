@@ -18,9 +18,11 @@
 		h1 {
 			color: #fff;
 			font-size: 100px;
+			font-family: 'Bodoni Moda', serif;
+			font-weight: 300;
+			text-shadow: -3px 3px 8px rgba(0, 0, 0, 0.5), 3px 0 rgba(255, 181, 0, 0.7);
 		}
 	}
-
 	.inner {
 		width: calc(100% - 50px);
 		min-height: 500px;
