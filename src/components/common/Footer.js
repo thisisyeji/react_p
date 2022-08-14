@@ -1,8 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import { faPinterest } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
@@ -37,16 +36,13 @@ function Footer() {
 						<img src={path + '/img/envel.png'} alt='email' />
 					</dd>
 				</dl>
-				<p>2022 LOGO All Right reserved.</p>
+				<p>ACQUA DI PARMA &copy; All Right reserved.</p>
 				<ul className='social'>
 					<li>
-						<FontAwesomeIcon icon={faTwitter} />
+						<FontAwesomeIcon icon={faPinterest} />
 					</li>
 					<li>
-						<FontAwesomeIcon icon={faInstagram} />
-					</li>
-					<li>
-						<FontAwesomeIcon icon={faFacebookF} />
+						<FontAwesomeIcon icon={faLinkedin} />
 					</li>
 					<li>
 						<FontAwesomeIcon icon={faYoutube} />
