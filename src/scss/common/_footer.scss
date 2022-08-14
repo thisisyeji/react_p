@@ -12,6 +12,7 @@ footer {
 	.upper {
 		width: 100%;
 		display: flex;
+		flex-wrap: wrap;
 
 		margin-bottom: 50px;
 
@@ -79,6 +80,7 @@ footer {
 	.lower {
 		width: 100%;
 		display: flex;
+		flex-wrap: wrap;
 		align-items: flex-end;
 
 		dl {
@@ -127,6 +129,64 @@ footer {
 				&:hover {
 					color: rgb(255, 181, 0);
 				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	footer {
+		.upper {
+			h1 {
+				width: 35%;
+			}
+
+			.left {
+				width: 35%;
+			}
+		}
+
+		.lower {
+			align-items: flex-start;
+			justify-content: center;
+			align-items: center;
+
+			dl {
+				width: 50%;
+				order: 1;
+			}
+
+			p {
+				width: 100%;
+				order: 3;
+				text-align: right;
+				margin-top: 30px;
+			}
+
+			.social {
+				justify-content: center;
+				width: 50%;
+				order: 2;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	footer {
+		.upper {
+			h1 {
+				width: 100%;
+				margin-bottom: 50px;
+				text-align: center;
+			}
+
+			.left {
+				width: 50%;
+			}
+
+			.right {
+				width: 50%;
 			}
 		}
 	}
