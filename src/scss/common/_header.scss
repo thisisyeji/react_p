@@ -143,13 +143,13 @@ header {
 		#gnb_mo {
 			border-top: 1px solid rgb(255, 181, 0);
 			border-bottom: 1px solid rgb(255, 181, 0);
+			text-align: center;
 			li {
 				width: 100%;
 				height: 50px;
 				background-color: rgba(81, 80, 80, 0.9);
 				border-top: 2px solid transparent;
 				border-bottom: 2px solid transparent;
-				text-align: left;
 				padding: 40px;
 
 				display: flex;
@@ -158,6 +158,7 @@ header {
 				a {
 					color: #ddd;
 					font-size: 32px;
+					margin: 0 auto;
 					transition: 0.5s;
 					position: relative;
 
@@ -175,12 +176,12 @@ header {
 				}
 
 				&:hover {
-					background-color: rgba(255, 252, 240, 0.9);
+					// background-color: rgba(255, 252, 240, 0.9);
 					box-shadow: -5px 0 rgba(0, 0, 0, 0.3);
 
 					a {
 						transform: translateX(50px);
-						color: #555;
+						color: rgb(255, 181, 0);
 
 						&::after {
 							width: 100%;
@@ -254,6 +255,32 @@ header.sub {
 		}
 		.gnb_right {
 			display: none;
+		}
+
+		.mobile {
+			#gnb_mo {
+				li {
+					a {
+						font-size: 28px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	header {
+		.mobile {
+			#gnb_mo {
+				li {
+					padding: 30px;
+
+					a {
+						font-size: 24px;
+					}
+				}
+			}
 		}
 	}
 }
