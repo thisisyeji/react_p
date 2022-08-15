@@ -2,6 +2,10 @@ import Layout from '../common/Layout';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+
 function About() {
 	const [Members, setMembers] = useState([]);
 
@@ -43,10 +47,10 @@ function About() {
 					We are present globally via a very selective distribution through our
 					Boutiques and designated retail partners and specialty stores.
 				</p>
-				<div className='about service'>
+				<div className='service_box'>
 					<div className='service_info'>
-						<div className='img'>
-							<img src='#' alt='' />
+						<div className='ser_img'>
+							<img src={`${process.env.PUBLIC_URL}/img/service1.png`} />
 						</div>
 						<div className='txt'>
 							<h3 className='service_title'>Discover the new fragrance</h3>
@@ -57,8 +61,8 @@ function About() {
 					</div>
 
 					<div className='service_info'>
-						<div className='img'>
-							<img src='#' alt='' />
+						<div className='ser_img'>
+							<img src={`${process.env.PUBLIC_URL}/img/service2.png`} />
 						</div>
 						<div className='txt'>
 							<h3 className='service_title'>Your Personal Message</h3>
@@ -70,8 +74,8 @@ function About() {
 					</div>
 
 					<div className='service_info'>
-						<div className='img'>
-							<img src='#' alt='' />
+						<div className='ser_img'>
+							<img src={`${process.env.PUBLIC_URL}/img/service3.png`} />
 						</div>
 						<div className='txt'>
 							<h3 className='service_title'>With our compliments</h3>
@@ -82,8 +86,8 @@ function About() {
 					</div>
 
 					<div className='service_info'>
-						<div className='img'>
-							<img src='#' alt='' />
+						<div className='ser_img'>
+							<img src={`${process.env.PUBLIC_URL}/img/service4.png`} />
 						</div>
 						<div className='txt'>
 							<h3 className='service_title'>Engraving Service</h3>
@@ -97,19 +101,31 @@ function About() {
 
 			<div className='members'>
 				<h2 className='mem_title'>OUR MEMBERS</h2>
-
 				{Members.map((member, idx) => {
 					return (
-						<article key={idx}>
-							<div className='img'>
-								<img
-									src={`${process.env.PUBLIC_URL}/img/${member.pic}`}
-									alt={member.name}
-								/>
+						<article key={idx} className='member'>
+							<div className='mem_box'>
+								<div className='img'>
+									<img
+										src={`${process.env.PUBLIC_URL}/img/${member.pic}`}
+										alt={member.name}
+									/>
+								</div>
+
+								<div className='mem_info'>
+									<h3>{member.name}</h3>
+									<p>{member.position}</p>
+								</div>
 							</div>
 
-							<h2>{member.name}</h2>
-							<p>{member.position}</p>
+							<ul className='mem_social'>
+								<li>
+									<FontAwesomeIcon icon={faLinkedin} />
+								</li>
+								<li>
+									<FontAwesomeIcon icon={faEnvelope} />
+								</li>
+							</ul>
 						</article>
 					);
 				})}
