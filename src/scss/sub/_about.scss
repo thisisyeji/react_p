@@ -299,3 +299,179 @@
 		}
 	}
 }
+
+@media screen and (max-width: $tablet) {
+	.About {
+		> .inner {
+			.about {
+				> p {
+					padding: 0 5%;
+				}
+			}
+
+			.soul {
+				p {
+					margin-top: 50px;
+					margin-bottom: 30px;
+					font-size: 22px;
+
+					strong {
+						font-size: 28px;
+					}
+				}
+
+				.line {
+					margin-bottom: 0;
+				}
+			}
+
+			.service {
+				margin-bottom: 100px;
+				.service_box {
+					.service_info {
+						width: calc(100% / 2);
+					}
+				}
+			}
+
+			.members {
+				border-top: 1px solid #999;
+
+				h2 {
+					font-size: 70px;
+				}
+
+				.member {
+					width: calc(100% / 2);
+
+					.mem_box {
+						height: 60vw;
+
+						.img {
+							&::after {
+								height: 60vw;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.About {
+		> .inner {
+			.about {
+				margin-bottom: 100px;
+
+				> h2 {
+					font-size: 36px;
+				}
+				> p {
+					padding: 0 5%;
+					font-size: 18px;
+				}
+			}
+
+			.soul {
+				p {
+					margin-top: 30px;
+					font-size: 18px;
+
+					strong {
+						font-size: 24px;
+					}
+				}
+
+				span {
+					width: 150px;
+					height: 50px;
+					font-size: 18px;
+					line-height: 50px;
+
+					margin-bottom: 30px;
+
+					&::after {
+						width: 150px;
+						height: 50px;
+					}
+
+					&:hover {
+						width: 200px;
+						transform: translateY(15px);
+						&::after {
+							width: 200px;
+						}
+					}
+				}
+
+				.line {
+					width: 10px;
+					height: 100px;
+					margin-bottom: 0;
+
+					&::before {
+						left: -15px;
+						width: 10px;
+						height: 50px;
+					}
+
+					&::after {
+						right: -15px;
+						width: 10px;
+						height: 50px;
+					}
+				}
+			}
+
+			.service {
+				margin-bottom: 100px;
+
+				> p {
+					margin-bottom: 30px;
+				}
+				.service_box {
+					.service_info {
+						width: 100%;
+						.ser_img {
+							margin: 0 auto;
+							margin-bottom: 10px;
+						}
+						.txt {
+							text-align: center;
+							h3 {
+								font-size: 16px;
+							}
+
+							p {
+								font-size: 14px;
+							}
+						}
+					}
+				}
+			}
+
+			.members {
+				h2 {
+					font-size: 50px;
+				}
+
+				.member {
+					width: 100%;
+					margin-bottom: 0;
+
+					.mem_box {
+						height: 80vw;
+
+						.img {
+							&::after {
+								height: 80vw;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
