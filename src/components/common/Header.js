@@ -90,7 +90,7 @@ function Header({ type }) {
 							onClick={() => {
 								gnbMo.current.classList.remove('on');
 							}}>
-							ABOUT
+							About
 						</NavLink>
 					</li>
 					<li>
@@ -99,7 +99,7 @@ function Header({ type }) {
 							onClick={() => {
 								gnbMo.current.classList.remove('on');
 							}}>
-							YOUTUBE
+							Youtube
 						</NavLink>
 					</li>
 					<li>
@@ -108,7 +108,7 @@ function Header({ type }) {
 							onClick={() => {
 								gnbMo.current.classList.remove('on');
 							}}>
-							GALLERY
+							Gallery
 						</NavLink>
 					</li>
 					<li>
@@ -117,7 +117,7 @@ function Header({ type }) {
 							onClick={() => {
 								gnbMo.current.classList.remove('on');
 							}}>
-							COMMUNITY
+							Community
 						</NavLink>
 					</li>
 					<li>
@@ -126,7 +126,7 @@ function Header({ type }) {
 							onClick={() => {
 								gnbMo.current.classList.remove('on');
 							}}>
-							LOCATION
+							Location
 						</NavLink>
 					</li>
 					<li>
@@ -135,7 +135,7 @@ function Header({ type }) {
 							onClick={() => {
 								gnbMo.current.classList.remove('on');
 							}}>
-							MEMBERS
+							Members
 						</NavLink>
 					</li>
 				</ul>
