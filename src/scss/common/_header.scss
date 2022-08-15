@@ -119,8 +119,6 @@ header {
 		right: 0;
 		width: 100%;
 		box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
-		// font-family: 'Bodoni Moda', serif;
-		font-weight: 100;
 		opacity: 0;
 		transform: translateY(-1000px);
 		transition: 1s;
@@ -162,6 +160,7 @@ header {
 					width: 100%;
 					color: #ddd;
 					font-size: 32px;
+					font-weight: 200;
 					margin: 0 auto;
 					transition: 0.5s;
 					position: relative;
