@@ -2,7 +2,7 @@ footer {
 	width: 100%;
 	font-family: 'Prompt', sans-serif;
 	padding: 5vw 10vw;
-	background-color: #eeedcc40;
+	background-color: rgba(238, 237, 204, 0.25);
 
 	display: flex;
 	flex-wrap: wrap;
@@ -39,7 +39,7 @@ footer {
 				transition: 0.3s;
 
 				&:hover {
-					color: #efefef;
+					color: #fffcf0;
 					text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
 				}
 			}
@@ -187,6 +187,12 @@ footer {
 
 			.right {
 				width: 50%;
+			}
+		}
+
+		.lower {
+			.copy {
+				text-align: center;
 			}
 		}
 	}
