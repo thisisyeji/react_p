@@ -12,14 +12,39 @@
 
 		.about {
 			margin-bottom: 200px;
+
 			h2 {
 				font-size: 50px;
 				text-align: center;
 				margin-bottom: 20px;
-				color: rgb(255, 181, 0);
+				color: #444;
+
+				position: relative;
+
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 0;
+					width: 20vw;
+					height: 2px;
+					background-color: rgb(255, 181, 0);
+				}
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%;
+					right: 0;
+					width: 20vw;
+					height: 2px;
+					background-color: rgb(255, 181, 0);
+				}
 			}
 
-			> p {
+			.desc {
 				text-align: center;
 				word-break: break-all;
 				color: #555;
@@ -133,6 +158,37 @@
 					background-color: rgb(255, 181, 0);
 					// border: 1px solid #555;
 					border-radius: 100px;
+				}
+			}
+		}
+
+		.story {
+			.story_con {
+				margin-top: 50px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+
+				p {
+					width: 60%;
+					padding: 0;
+					padding-right: 20px;
+				}
+
+				.story_img {
+					width: 40%;
+					padding: 50px;
+
+					border-top-right-radius: 50%;
+					border-bottom-right-radius: 50%;
+
+					img {
+						width: 100%;
+						height: 100%;
+						border-top-right-radius: 50%;
+						border-bottom-right-radius: 50%;
+					}
 				}
 			}
 		}
@@ -300,12 +356,55 @@
 	}
 }
 
+@media screen and (max-width: $desktop) {
+	.About {
+		> .inner {
+			.about {
+				h2 {
+					&::before {
+						width: 17vw;
+					}
+
+					&::after {
+						width: 17vw;
+					}
+				}
+			}
+
+			.story {
+				.story_con {
+					.story_img {
+						padding: 30px;
+					}
+				}
+			}
+		}
+	}
+}
+
 @media screen and (max-width: $tablet) {
 	.About {
 		> .inner {
 			.about {
-				> p {
+				h2 {
+					&::before {
+						width: 15vw;
+					}
+
+					&::after {
+						width: 15vw;
+					}
+				}
+				.desc {
 					padding: 0 5%;
+				}
+			}
+
+			.story {
+				.story_con {
+					.story_img {
+						padding: 0px;
+					}
 				}
 			}
 
@@ -367,8 +466,16 @@
 
 				> h2 {
 					font-size: 36px;
+
+					&::before {
+						width: 12vw;
+					}
+
+					&::after {
+						width: 12vw;
+					}
 				}
-				> p {
+				.desc {
 					padding: 0 5%;
 					font-size: 18px;
 				}
@@ -421,6 +528,23 @@
 						right: -15px;
 						width: 10px;
 						height: 50px;
+					}
+				}
+			}
+
+			.story {
+				.story_con {
+					p {
+						width: 100%;
+						padding: 0 5%;
+						order: 2;
+					}
+
+					.story_img {
+						width: 100%;
+						order: 1;
+						padding: 0 15%;
+						margin-bottom: 20px;
 					}
 				}
 			}

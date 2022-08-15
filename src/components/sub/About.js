@@ -8,9 +8,10 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 function About() {
 	const [Members, setMembers] = useState([]);
+	const path = process.env.PUBLIC_URL;
 
 	useEffect(() => {
-		axios.get(process.env.PUBLIC_URL + '/DB/members.json').then((json) => {
+		axios.get(path + '/DB/members.json').then((json) => {
 			// console.log(json.data.members);
 			setMembers(json.data.members);
 		});
@@ -32,25 +33,30 @@ function About() {
 
 			<div className='about story'>
 				<h2>OUR STORY</h2>
-				<p>
-					Created in 1916 by the baron Carlo Magnani from Parma as his own
-					personal Colonia, Acqua di Parma today is a symbol of Italian
-					sophistication, discreet luxury, and craftsmanship that is inspired by
-					its heritage and yet constantly evolving to always stay relevant and
-					meaningful.
-				</p>
+				<div className='story_con'>
+					<p className='desc'>
+						Created in 1916 by the baron Carlo Magnani from Parma as his own
+						personal Colonia, Acqua di Parma today is a symbol of Italian
+						sophistication, discreet luxury, and craftsmanship that is inspired
+						by its heritage and yet constantly evolving to always stay relevant
+						and meaningful.
+					</p>
+					<div className='story_img'>
+						<img src={path + '/img/story.jpg'} alt='baron' />
+					</div>
+				</div>
 			</div>
 
 			<div className='about service'>
 				<h2>OUR SERVICE</h2>
-				<p>
+				<p className='desc'>
 					We are present globally via a very selective distribution through our
 					Boutiques and designated retail partners and specialty stores.
 				</p>
 				<div className='service_box'>
 					<div className='service_info'>
 						<div className='ser_img'>
-							<img src={`${process.env.PUBLIC_URL}/img/service1.png`} />
+							<img src={path + '/img/service1.png'} />
 						</div>
 						<div className='txt'>
 							<h3 className='service_title'>Discover the new fragrance</h3>
@@ -62,7 +68,7 @@ function About() {
 
 					<div className='service_info'>
 						<div className='ser_img'>
-							<img src={`${process.env.PUBLIC_URL}/img/service2.png`} />
+							<img src={path + '/img/service2.png'} />
 						</div>
 						<div className='txt'>
 							<h3 className='service_title'>Your Personal Message</h3>
@@ -75,7 +81,7 @@ function About() {
 
 					<div className='service_info'>
 						<div className='ser_img'>
-							<img src={`${process.env.PUBLIC_URL}/img/service3.png`} />
+							<img src={path + '/img/service3.png'} />
 						</div>
 						<div className='txt'>
 							<h3 className='service_title'>With our compliments</h3>
@@ -87,7 +93,7 @@ function About() {
 
 					<div className='service_info'>
 						<div className='ser_img'>
-							<img src={`${process.env.PUBLIC_URL}/img/service4.png`} />
+							<img src={path + '/img/service4.png'} />
 						</div>
 						<div className='txt'>
 							<h3 className='service_title'>Engraving Service</h3>
@@ -106,10 +112,7 @@ function About() {
 						<article key={idx} className='member'>
 							<div className='mem_box'>
 								<div className='img'>
-									<img
-										src={`${process.env.PUBLIC_URL}/img/${member.pic}`}
-										alt={member.name}
-									/>
+									<img src={`${path}/img/${member.pic}`} alt={member.name} />
 								</div>
 
 								<div className='mem_info'>
