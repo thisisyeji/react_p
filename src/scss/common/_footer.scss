@@ -83,16 +83,16 @@ footer {
 		flex-wrap: wrap;
 		align-items: flex-end;
 
-		dl {
+		.email {
 			width: 30%;
-			dt {
+			p {
 				color: #666;
 				font-size: 14px;
 				font-weight: 600;
 				margin-bottom: 20px;
 			}
 
-			dd {
+			.img_box {
 				width: 100px;
 				cursor: pointer;
 
@@ -110,7 +110,7 @@ footer {
 			}
 		}
 
-		p {
+		.copy {
 			width: 40%;
 			color: #999;
 			font-size: 14px;
@@ -151,12 +151,12 @@ footer {
 			justify-content: center;
 			align-items: center;
 
-			dl {
+			.email {
 				width: 50%;
 				order: 1;
 			}
 
-			p {
+			.copy {
 				width: 100%;
 				order: 3;
 				text-align: right;

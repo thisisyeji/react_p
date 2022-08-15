@@ -30,13 +30,15 @@ function Footer() {
 			</div>
 
 			<div className='lower'>
-				<dl>
-					<dt>newsletter</dt>
-					<dd>
+				<div className='email'>
+					<p>newsletter</p>
+					<div className='img_box'>
 						<img src={path + '/img/envel.png'} alt='email' />
-					</dd>
-				</dl>
-				<p>ACQUA DI PARMA &copy; All Right reserved.</p>
+					</div>
+				</div>
+
+				<p className='copy'>ACQUA DI PARMA &copy; All Right reserved.</p>
+
 				<ul className='social'>
 					<li>
 						<FontAwesomeIcon icon={faPinterest} />
