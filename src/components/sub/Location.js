@@ -104,7 +104,7 @@ function Location() {
 	return (
 		<Layout name={'Location'}>
 			<div className='upper'>
-				<div className='help'>
+				<div className='email'>
 					<h2>Get in touch</h2>
 					<form>
 						<fieldset>

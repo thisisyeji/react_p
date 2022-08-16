@@ -17,7 +17,7 @@
 			justify-content: space-between;
 			margin-bottom: 50px;
 
-			.help {
+			.email {
 				width: 50%;
 				form {
 					fieldset {
@@ -28,7 +28,7 @@
 							margin: 0;
 							th {
 								width: 20%;
-								color: #444;
+								color: #555;
 								font-size: 20px;
 								font-weight: 200;
 								text-align: left;
@@ -38,7 +38,7 @@
 
 								input[type='submit'] {
 									font-family: 'Prompt', sans-serif;
-									border: 1px solid #555;
+									border: 1px solid #666;
 									background-color: transparent;
 									width: 120px;
 									height: 40px;
@@ -58,10 +58,11 @@
 								textarea {
 									width: 75%;
 									padding: 5px;
+									color: #555;
 									border: none;
 									outline: none;
 									background-color: transparent;
-									border-bottom: 1px solid #555;
+									border-bottom: 1px solid #666;
 								}
 							}
 						}
@@ -97,8 +98,9 @@
 					}
 
 					p {
-						margin-bottom: 10px;
+						color: #555;
 						font-weight: 200;
+						margin-bottom: 10px;
 						.fa-phone {
 							margin-right: 10px;
 						}
