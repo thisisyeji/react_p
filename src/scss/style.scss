@@ -6,6 +6,10 @@ $desktop: 1199px;
 $tablet: 768px;
 $mobile: 539px;
 
+// color
+$orange: rgb(255, 181, 0);
+$bg: #fffcf0;
+
 //common
 @import './common/reset';
 @import './common/header';

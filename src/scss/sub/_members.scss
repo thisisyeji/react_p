@@ -1,0 +1,144 @@
+.Members {
+	font-family: 'Prompt', sans-serif;
+
+	h2 {
+		font-size: 80px;
+		color: #fff;
+		text-shadow: -1px 0 #999, 0 1px #999, 1px 0 #ddd, 0 -1px #ddd,
+			5px 5px 0 $orange;
+		font-style: italic;
+		text-align: center;
+	}
+
+	.box {
+		width: 90%;
+		height: 100%;
+		margin: 0 auto;
+		border: 1px solid $orange;
+		box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 20px;
+
+		.logo {
+			width: 40%;
+			height: 100%;
+			background-color: $orange;
+			padding: 70px;
+			position: relative;
+			left: -20px;
+
+			img {
+				width: 100%;
+			}
+		}
+		form {
+			width: 60%;
+			padding: 10px 20px;
+			fieldset {
+				border: none;
+
+				table {
+					width: 100%;
+					tr {
+						width: 100%;
+						display: flex;
+						flex-wrap: wrap;
+						border-bottom: 1px solid #efefef;
+						margin: 10px 0;
+
+						&:last-child {
+							border-bottom: none;
+						}
+
+						th {
+							width: 25%;
+							text-align: left;
+							padding: 15px;
+							font-weight: 200;
+							color: #555;
+
+							&:last-child {
+								text-align: center;
+								padding: 0;
+								width: 100%;
+							}
+
+							input[type='reset'],
+							input[type='submit'] {
+								border: 1px solid $orange;
+								background: transparent;
+								color: $orange;
+								width: 100px;
+								height: 30px;
+								display: inline-flex;
+								justify-content: center;
+								align-items: center;
+								margin: 10px;
+								cursor: pointer;
+								transition: 0.5s;
+
+								&:hover {
+									box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+								}
+							}
+
+							input[type='submit'] {
+								border: 1px solid $orange;
+								background: $orange;
+								color: #fff;
+							}
+						}
+
+						td {
+							width: 75%;
+							padding: 5px 10px;
+							font-weight: 200;
+
+							label {
+								margin-right: 15px;
+								display: block;
+								color: #666;
+								font-size: 15px;
+								width: 90%;
+								margin-bottom: 5px;
+							}
+
+							input[type='text'],
+							input[type='password'],
+							select,
+							textarea {
+								width: 100%;
+								font-family: 'Prompt', sans-serif;
+								font-weight: 200;
+								border: 1px solid transparent;
+								border-bottom: 1px solid $orange;
+								padding: 10px;
+								resize: none;
+
+								&:focus,
+								&:active {
+									border: 1px solid $orange;
+									outline: none;
+								}
+							}
+
+							input[type='checkbox'],
+							input[type='radio'] {
+								margin-right: 5px;
+							}
+
+							.err {
+								font-size: 13px;
+								color: hotpink;
+								font-weight: 300;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

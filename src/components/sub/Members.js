@@ -31,11 +31,11 @@ function Members() {
 		const spc = /[~!@#$%^&*()_+\[]/;
 
 		if (value.userid.length < 5) {
-			errs.userid = '아이디를 5글자 이상 입력하세요.';
+			errs.userid = '* Use 5 or more characters.';
 		}
 
 		if (value.email.length < 6 || !/@/.test(value.email)) {
-			errs.email = '이메일을 @를 포함하여 입력하세요.';
+			errs.email = '* Make sure your email address is correct.';
 		}
 
 		if (
@@ -45,27 +45,23 @@ function Members() {
 			!spc.test(value.pwd1)
 		) {
 			errs.pwd1 =
-				'비밀번호를 5글자 이상 숫자, 영문자, 특수문자를 모두 포함하여 입력하세요.';
+				'* Use 5 or more characters with a mix of letters, numbers & symbols.';
 		}
 
 		if (value.pwd1 !== value.pwd2 || !value.pwd2) {
-			errs.pwd2 = '비밀번호를 동일하게 입력하세요.';
+			errs.pwd2 = '* Enter the same password again.';
 		}
 
 		if (!value.gender) {
-			errs.gender = '성별을 선택하세요.';
+			errs.gender = '* Choose your gender.';
 		}
 
 		if (!value.interests) {
-			errs.interests = '관심사를 하나 이상 선택하세요.';
+			errs.interests = '* Choose all your interests.';
 		}
 
-		if (value.edu === '') {
-			errs.edu = '최종학력을 선택하세요.';
-		}
-
-		if (value.comments.length < 10) {
-			errs.comments = '코멘트를 10글자 이상 입력하세요.';
+		if (value.country === '') {
+			errs.country = '* Select the Country of residence.';
 		}
 
 		return errs;
@@ -111,7 +107,7 @@ function Members() {
 	useEffect(() => {
 		const len = Object.keys(Err).length;
 		if (len === 0 && Submit) {
-			alert('회원가입이 완료되었습니다. 메인페이지로 이동합니다.');
+			alert('Congraturations! Now you are a member of Acqua di Parma.');
 
 			history.push('/');
 		}
@@ -119,201 +115,218 @@ function Members() {
 
 	return (
 		<Layout name={'Members'}>
-			<form onSubmit={handleSubmit}>
-				<fieldset>
-					<legend className='hidden'>join</legend>
-					<table>
-						<caption className='hidden'>Join</caption>
+			<h2>Create account</h2>
+			<div className='box'>
+				<div className='logo'>
+					<img src={process.env.PUBLIC_URL + '/img/logo_img.png'} alt='' />
+				</div>
 
-						<tbody>
-							{/* user id */}
-							<tr>
-								<th scope='row'>
-									<label htmlFor='userid'>USER ID</label>
-								</th>
-								<td>
-									<input
-										type='text'
-										name='userid'
-										id='userid'
-										placeholder='아이디를 입력하세요.'
-										onChange={handleChange}
-									/>
-									<span className='err'>{Err.userid}</span>
-								</td>
-							</tr>
+				<form onSubmit={handleSubmit}>
+					<fieldset>
+						<legend className='hidden'>join</legend>
+						<table>
+							<caption className='hidden'>Join</caption>
 
-							{/* pwd */}
-							<tr>
-								<th scope='row'>
-									<label htmlFor='pwd1'>PASSWORD</label>
-								</th>
+							<tbody>
+								{/* user id */}
+								<tr>
+									<th scope='row'>
+										<label htmlFor='userid'>ID</label>
+									</th>
+									<td>
+										<input
+											type='text'
+											name='userid'
+											id='userid'
+											placeholder='Enter your ID.'
+											onChange={handleChange}
+										/>
+										<span className='err'>{Err.userid}</span>
+									</td>
+								</tr>
 
-								<td>
-									<input
-										type='password'
-										name='pwd1'
-										id='pwd1'
-										placeholder='비밀번호를 입력하세요.'
-										onChange={handleChange}
-									/>
-									<span className='err'>{Err.pwd1}</span>
-								</td>
-							</tr>
+								{/* pwd */}
+								<tr>
+									<th scope='row'>
+										<label htmlFor='pwd1'>Password</label>
+									</th>
 
-							<tr>
-								<th scope='row'>
-									<label htmlFor='pwd2'>RE-PASSWORD</label>
-								</th>
+									<td>
+										<input
+											type='password'
+											name='pwd1'
+											id='pwd1'
+											placeholder='Enter your Password.'
+											onChange={handleChange}
+										/>
+										<span className='err'>{Err.pwd1}</span>
+									</td>
+								</tr>
 
-								<td>
-									<input
-										type='password'
-										name='pwd2'
-										id='pwd2'
-										placeholder='비밀번호를 재입력하세요.'
-										onChange={handleChange}
-									/>
-									<span className='err'>{Err.pwd2}</span>
-								</td>
-							</tr>
+								<tr>
+									<th scope='row'>
+										<label htmlFor='pwd2'>Confirm Password</label>
+									</th>
 
-							{/* email */}
-							<tr>
-								<th scope='row'>
-									<label htmlFor='email'>E-MAIL</label>
-								</th>
-								<td>
-									<input
-										type='text'
-										name='email'
-										id='email'
-										placeholder='이메일을 입력하세요.'
-										onChange={handleChange}
-									/>
-									<span className='err'>{Err.email}</span>
-								</td>
-							</tr>
+									<td>
+										<input
+											type='password'
+											name='pwd2'
+											id='pwd2'
+											placeholder='Confirm your Password.'
+											onChange={handleChange}
+										/>
+										<span className='err'>{Err.pwd2}</span>
+									</td>
+								</tr>
 
-							{/* gender */}
-							<tr>
-								<th scope='row'>GENDER</th>
+								{/* email */}
+								<tr>
+									<th scope='row'>
+										<label htmlFor='email'>E-mail</label>
+									</th>
+									<td>
+										<input
+											type='text'
+											name='email'
+											id='email'
+											placeholder='Enter your E-mail.'
+											onChange={handleChange}
+										/>
+										<span className='err'>{Err.email}</span>
+									</td>
+								</tr>
 
-								<td>
-									<input
-										type='radio'
-										name='gender'
-										id='male'
-										onChange={handleRadio}
-									/>
-									<label htmlFor='male'>MALE</label>
+								{/* gender */}
+								<tr>
+									<th scope='row'>Gender</th>
 
-									<input
-										type='radio'
-										name='gender'
-										id='female'
-										onChange={handleRadio}
-									/>
-									<label htmlFor='female'>FEMALE</label>
+									<td>
+										<label htmlFor='male'>
+											<input
+												type='radio'
+												name='gender'
+												id='male'
+												onChange={handleRadio}
+											/>
+											Male
+										</label>
 
-									<span className='err'>{Err.gender}</span>
-								</td>
-							</tr>
+										<label htmlFor='female'>
+											<input
+												type='radio'
+												name='gender'
+												id='female'
+												onChange={handleRadio}
+											/>
+											Female
+										</label>
 
-							{/* interests */}
-							<tr>
-								<th scope='row'>INTERESTS</th>
+										<span className='err'>{Err.gender}</span>
+									</td>
+								</tr>
 
-								<td>
-									<input
-										type='checkbox'
-										name='interests'
-										id='sports'
-										onChange={handleCheck}
-									/>
-									<label htmlFor='sports'>SPORTS</label>
+								{/* interests */}
+								<tr>
+									<th scope='row'>Interests</th>
 
-									<input
-										type='checkbox'
-										name='interests'
-										id='music'
-										onChange={handleCheck}
-									/>
-									<label htmlFor='music'>MUSIC</label>
+									<td>
+										<label htmlFor='fragrances'>
+											<input
+												type='checkbox'
+												name='interests'
+												id='fragrances'
+												onChange={handleCheck}
+											/>
+											Fragrances
+										</label>
 
-									<input
-										type='checkbox'
-										name='interests'
-										id='game'
-										onChange={handleCheck}
-									/>
-									<label htmlFor='game'>GAME</label>
+										<label htmlFor='bodycare'>
+											<input
+												type='checkbox'
+												name='interests'
+												id='bodycare'
+												onChange={handleCheck}
+											/>
+											Body care
+										</label>
 
-									<input
-										type='checkbox'
-										name='interests'
-										id='movie'
-										onChange={handleCheck}
-									/>
-									<label htmlFor='movie'>MOVIE</label>
+										<label htmlFor='home'>
+											<input
+												type='checkbox'
+												name='interests'
+												id='home'
+												onChange={handleCheck}
+											/>
+											Home collection
+										</label>
 
-									<span className='err'>{Err.interests}</span>
-								</td>
-							</tr>
+										<label htmlFor='car'>
+											<input
+												type='checkbox'
+												name='interests'
+												id='car'
+												onChange={handleCheck}
+											/>
+											Car diffuser
+										</label>
 
-							{/* edu */}
-							<tr>
-								<th scope='row'>
-									<label htmlFor='edu'>EDUCATION</label>
-								</th>
+										<span className='err'>{Err.interests}</span>
+									</td>
+								</tr>
 
-								<td>
-									<select name='edu' id='edu' onChange={handleSelect}>
-										<option value=''>최종학력을 선택하세요.</option>
-										<option value='elementary-school'>초등학교 졸업</option>
-										<option value='middle-school'>중학교 졸업</option>
-										<option value='high-school'>고등학교 졸업</option>
-										<option value='college'>대학교 졸업</option>
-									</select>
+								{/* country */}
+								<tr>
+									<th scope='row'>
+										<label htmlFor='country'>Country</label>
+									</th>
 
-									<span className='err'>{Err.edu}</span>
-								</td>
-							</tr>
+									<td>
+										<select name='country' id='country' onChange={handleSelect}>
+											<option value=''>SELECT ONE</option>
+											<option value='korea'>Republic of Korea</option>
+											<option value='us'>United States</option>
+											<option value='italy'>Italy</option>
+											<option value='etc'>Etc.</option>
+										</select>
 
-							{/* comments */}
-							<tr>
-								<th scope='row'>
-									<label htmlFor='comments'>COMMENTS</label>
-								</th>
+										<span className='err'>{Err.edu}</span>
+									</td>
+								</tr>
 
-								<td>
-									<textarea
-										name='comments'
-										id='comments'
-										cols='30'
-										rows='5'
-										placeholder='코멘트를 입력하세요'
-										onChange={handleChange}></textarea>
+								{/* comments */}
+								<tr>
+									<th scope='row'>
+										<label htmlFor='comments'>Comments</label>
+									</th>
 
-									<span className='err'>{Err.comments}</span>
-								</td>
-							</tr>
+									<td>
+										<textarea
+											name='comments'
+											id='comments'
+											cols='30'
+											rows='3'
+											placeholder='Please write any comments.'
+											onChange={handleChange}></textarea>
+									</td>
+								</tr>
 
-							{/* buttons */}
-							<tr>
-								<th colSpan='2'>
-									<input type='reset' value='CANCEL' />
-									<input
-										type='submit'
-										value='SUBMIT'
-										onClick={() => setSubmit(true)}
-									/>
-								</th>
-							</tr>
-						</tbody>
-					</table>
-				</fieldset>
-			</form>
+								{/* buttons */}
+								<tr>
+									<th colSpan='2'>
+										<input type='reset' value='CANCEL' />
+										<input
+											type='submit'
+											value='SUBMIT'
+											onClick={() => setSubmit(true)}
+										/>
+									</th>
+								</tr>
+							</tbody>
+						</table>
+					</fieldset>
+				</form>
+			</div>
 		</Layout>
 	);
 }
