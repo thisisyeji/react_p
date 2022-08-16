@@ -317,7 +317,7 @@ function Members() {
 										<input type='reset' value='CANCEL' />
 										<input
 											type='submit'
-											value='SUBMIT'
+											value='SIGN UP'
 											onClick={() => setSubmit(true)}
 										/>
 									</th>

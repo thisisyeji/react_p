@@ -68,11 +68,14 @@
 
 							input[type='reset'],
 							input[type='submit'] {
+								font-family: 'Prompt', sans-serif;
 								border: 1px solid $orange;
 								background: transparent;
+								border-radius: 30px;
 								color: $orange;
 								width: 100px;
 								height: 30px;
+
 								display: inline-flex;
 								justify-content: center;
 								align-items: center;
