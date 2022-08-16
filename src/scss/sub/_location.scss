@@ -1,8 +1,330 @@
 .Location {
 	width: 100%;
+	font-family: 'Prompt', sans-serif;
 
-	.map {
-		width: 100%;
-		height: 500px;
+	.inner {
+		h2 {
+			font-size: 60px;
+			color: #333;
+			margin-bottom: 30px;
+		}
+
+		.upper {
+			width: 100%;
+
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			margin-bottom: 50px;
+
+			.help {
+				width: 50%;
+				form {
+					fieldset {
+						border: none;
+
+						table {
+							width: 100%;
+							margin: 0;
+							th {
+								width: 20%;
+								color: #444;
+								font-size: 20px;
+								font-weight: 200;
+								text-align: left;
+								padding: 10px;
+
+								position: relative;
+
+								input[type='submit'] {
+									font-family: 'Prompt', sans-serif;
+									border: 1px solid #555;
+									background-color: transparent;
+									width: 120px;
+									height: 40px;
+									font-size: 16px;
+									font-weight: 200;
+									position: absolute;
+									right: 15%;
+									margin-top: 20px;
+									cursor: pointer;
+								}
+							}
+
+							td {
+								padding-top: 10px;
+								input[type='text'],
+								input[type='email'],
+								textarea {
+									width: 75%;
+									padding: 5px;
+									border: none;
+									outline: none;
+									background-color: transparent;
+									border-bottom: 1px solid #555;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.branch {
+				width: 50%;
+				border-left: 1px solid #ddd;
+				padding-left: 50px;
+
+				li {
+					margin-bottom: 20px;
+
+					h3 {
+						width: 250px;
+						border: 2px solid rgb(255, 181, 0);
+						border-radius: 100px;
+						color: rgb(255, 181, 0);
+						text-align: center;
+						font-weight: 300;
+						padding: 5px;
+						margin-bottom: 10px;
+						transition: 0.5s;
+						cursor: pointer;
+
+						&.on {
+							background-color: rgb(255, 181, 0);
+							box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+							color: #fff;
+						}
+					}
+
+					p {
+						margin-bottom: 10px;
+						font-weight: 200;
+						.fa-phone {
+							margin-right: 10px;
+						}
+					}
+				}
+			}
+		}
+
+		.map {
+			width: 100%;
+			height: 500px;
+			margin-bottom: 100px;
+		}
+
+		.lower {
+			width: 100%;
+
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: flex-start;
+
+			h2 {
+				width: 50%;
+			}
+
+			.content {
+				width: 50%;
+
+				article {
+					margin-bottom: 30px;
+					h3 {
+						display: flex;
+						justify-content: space-between;
+						font-size: 20px;
+						font-weight: 500;
+						color: #555;
+						cursor: pointer;
+						margin-bottom: 10px;
+						transition: 0.5s;
+
+						.fa-angle-down {
+							padding: 5px;
+							transition: 0.5s;
+						}
+					}
+
+					p {
+						color: #666;
+						word-break: break-all;
+						font-weight: 200;
+						height: 0;
+						opacity: 0;
+						transition: 0.5s;
+					}
+
+					&.on {
+						h3 {
+							color: rgb(255, 181, 0);
+
+							.fa-angle-down {
+								transform: rotate(180deg);
+							}
+						}
+						p {
+							height: auto;
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $desktop) {
+	.Location {
+		.inner {
+			padding: 10vw 5vw;
+
+			h2 {
+				font-size: 55px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.Location {
+		.inner {
+			padding: 100px 30px;
+			h2 {
+				font-size: 50px;
+				margin-bottom: 20px;
+			}
+
+			.upper {
+				margin-bottom: 10px;
+				.help {
+					width: 100%;
+					form {
+						margin-bottom: 100px;
+						fieldset {
+							table {
+								td {
+									padding-top: 10px;
+									input[type='text'],
+									input[type='email'],
+									textarea {
+										width: 90%;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.branch {
+					width: 100%;
+					border-left: none;
+					border-top: 1px solid #ddd;
+					padding-left: 0;
+					padding-top: 50px;
+
+					li {
+						margin-bottom: 20px;
+
+						h3 {
+							width: 250px;
+							font-size: 18px;
+						}
+
+						p {
+							margin-bottom: 10px;
+							font-weight: 200;
+						}
+					}
+				}
+			}
+
+			.map {
+				width: 100%;
+				height: 60vh;
+				margin-bottom: 50px;
+			}
+
+			.lower {
+				width: 100%;
+
+				h2 {
+					width: 100%;
+				}
+
+				.content {
+					width: 100%;
+
+					article {
+						margin-bottom: 15px;
+						h3 {
+							font-size: 18px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.Location {
+		.inner {
+			padding: 50px 15px;
+			h2 {
+				font-size: 40px;
+				margin-bottom: 10px;
+			}
+
+			.upper {
+				margin-bottom: 10px;
+				.help {
+					form {
+						fieldset {
+							table {
+								th {
+									font-size: 18px;
+								}
+							}
+						}
+					}
+				}
+
+				.branch {
+					li {
+						text-align: center;
+
+						h3 {
+							width: 220px;
+							font-size: 16px;
+							margin: 0 auto;
+							margin-bottom: 10px;
+						}
+
+						p {
+							font-weight: 300;
+							font-size: 14px;
+						}
+					}
+				}
+			}
+
+			.lower {
+				width: 100%;
+				.content {
+					article {
+						margin-bottom: 15px;
+						h3 {
+							font-size: 16px;
+						}
+
+						p {
+							font-size: 14px;
+							font-weight: 300;
+						}
+					}
+				}
+			}
+		}
 	}
 }
