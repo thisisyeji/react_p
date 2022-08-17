@@ -115,7 +115,7 @@ function Members() {
 
 	return (
 		<Layout name={'Members'}>
-			<h2>Create account</h2>
+			<h2>Sign up now!</h2>
 			<div className='box'>
 				<div className='logo'>
 					<img src={process.env.PUBLIC_URL + '/img/logo_img.png'} alt='' />
