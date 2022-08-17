@@ -15,7 +15,7 @@ function Members() {
 		pwd2: '',
 		gender: null,
 		interests: null,
-		edu: '',
+		country: '',
 		comments: '',
 	};
 	const [Val, setVal] = useState(initVal);
@@ -290,7 +290,7 @@ function Members() {
 											<option value='etc'>Etc.</option>
 										</select>
 
-										<span className='err'>{Err.edu}</span>
+										<span className='err'>{Err.country}</span>
 									</td>
 								</tr>
 
