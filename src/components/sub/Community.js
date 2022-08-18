@@ -2,7 +2,8 @@ import Layout from '../common/Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import { useRef, useState } from 'react';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { useRef, useState, useEffect } from 'react';
 
 function Community() {
 	const input = useRef(null);
@@ -11,7 +12,45 @@ function Community() {
 	const inputEdit = useRef(null);
 	const textareaEdit = useRef(null);
 
-	const [Posts, setPosts] = useState([]);
+	// 로컬스토리지에 있는 데이터 가져오기
+	const getLocalData = () => {
+		const dummyPosts = [
+			{
+				title: 'What is Acqua di Parma’s mission?',
+				content:
+					'To share with the world the yellow gift of the Italian Sun, Soul, and Style.',
+			},
+			{
+				title: 'Where are Acqua di Parma products made?',
+				content:
+					'All our products are made in Italy. We are proud of the Italian craftsmanship defining our products, where artisanal traditions have been perpetuated across generations.',
+			},
+			{
+				title: 'Where can I find the ingredients of a product?',
+				content:
+					'Ingredients are listed on the packaging of our products and our product pages on acquadiparma.com.',
+			},
+			{
+				title: 'Are any of your products tested on animals?',
+				content:
+					'We do not test our products nor the ingredients used in our cosmetics on animals.',
+			},
+			{
+				title: 'Do you have an environmental policy statement?',
+				content:
+					"The ecological imperative is a crucial part of LVMH's strategy and its Maisons, which are deeply committed to taking all necessary actions to protect and preserve the environment in which we live and operate.",
+			},
+		];
+
+		const data = localStorage.getItem('post');
+		if (data) {
+			return JSON.parse(data);
+		} else {
+			return dummyPosts;
+		}
+	};
+
+	const [Posts, setPosts] = useState(getLocalData());
 	const [Allowed, setAllowed] = useState(true);
 
 	//글 저장 함수
@@ -82,6 +121,10 @@ function Community() {
 		);
 		setAllowed(true);
 	};
+
+	useEffect(() => {
+		localStorage.setItem('post', JSON.stringify(Posts));
+	}, [Posts]);
 
 	return (
 		<Layout name={'Community'}>
