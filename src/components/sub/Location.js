@@ -6,7 +6,6 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 function Location() {
 	const [Index2, setIndex2] = useState(0);
-	useEffect(() => {}, [Index2]);
 
 	// faqs
 	const faqs = [
