@@ -13,7 +13,6 @@ function Header({ type }) {
 	const style = {
 		color: 'rgb(255, 181, 0)',
 		border: '1px solid rgb(255, 181, 0)',
-		textShadow: 'none',
 	};
 	return (
 		<header className={type}>
