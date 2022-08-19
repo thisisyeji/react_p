@@ -73,13 +73,15 @@
 			article {
 				width: calc(100% / 3 - 20px);
 				position: relative;
-				border-top: 2px solid $orange;
-				border-right: 1px solid #efefef;
+				// border-top: 2px solid $orange;
+				// border-right: 1px solid #efefef;
 				// border-radius: 20px;
 				padding: 20px;
 				margin: 10px;
 				margin-bottom: 50px;
 				transition: 0.5s;
+
+				border: 1px solid #999;
 
 				&:hover {
 					border: 1px solid transparent;
@@ -90,12 +92,13 @@
 
 					h3 {
 						color: #fff;
+						border-bottom: 1px solid #fff;
 					}
 
 					p {
-						color: $orange;
-						box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-						transform: translateX(-20px) scale(1.1);
+						color: #fff;
+						// box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+						// transform: translateX(-20px) scale(1.1);
 					}
 
 					.btns {
@@ -111,16 +114,17 @@
 					font-weight: 100;
 					font-style: italic;
 					font-family: 'Bodoni Moda', serif;
-					color: #666;
+					border-bottom: 1px solid #999;
+					color: #555;
 					margin-bottom: 30px;
+					padding-bottom: 15px;
 					transition: 0.5s;
 				}
 
 				p {
 					color: $orange;
-					padding: 30px;
-					background-color: #fff;
-					color: #888;
+					padding: 10px;
+					color: #777;
 					font-weight: 300;
 					border-radius: 10px;
 					word-break: break-all;
@@ -164,9 +168,9 @@
 					input,
 					textarea {
 						width: 100%;
-						background: #f2f1f1;
+						background: #fffcf0;
+						border: 1px solid $orange;
 						border-radius: 10px;
-						border: none;
 						resize: none;
 						word-break: break-all;
 						padding: 20px;
@@ -186,7 +190,7 @@
 						font-style: italic;
 						font-family: 'Bodoni Moda', serif;
 						font-size: 20px;
-						color: #666;
+						color: #555;
 						padding: 10px;
 						margin-bottom: 20px;
 					}
