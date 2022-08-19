@@ -21,24 +21,23 @@ function Community() {
 					'To share with the world the yellow gift of the Italian Sun, Soul, and Style.',
 			},
 			{
-				title: 'Where are Acqua di Parma products made?',
+				title: 'Scented celebrations of love',
 				content:
-					'All our products are made in Italy. We are proud of the Italian craftsmanship defining our products, where artisanal traditions have been perpetuated across generations.',
+					'The most special time of your life has met its scented partner.',
 			},
 			{
-				title: 'Where can I find the ingredients of a product?',
-				content:
-					'Ingredients are listed on the packaging of our products and our product pages on acquadiparma.com.',
+				title: 'The ingredients of a product',
+				content: 'Where can I find the ingredients of a product?',
 			},
 			{
-				title: 'Are any of your products tested on animals?',
+				title: 'I love it.',
 				content:
-					'We do not test our products nor the ingredients used in our cosmetics on animals.',
+					"I purchased a product from your online Boutique. It's arrived beautifully packaged in very iconic yellow box. Grazie. ",
 			},
 			{
-				title: 'Do you have an environmental policy statement?',
+				title: 'The luxury amenities hotel line',
 				content:
-					"The ecological imperative is a crucial part of LVMH's strategy and its Maisons, which are deeply committed to taking all necessary actions to protect and preserve the environment in which we live and operate.",
+					'The line includes a wide range of products, from bath and shower gel to hair products and body care.',
 			},
 		];
 
@@ -128,6 +127,10 @@ function Community() {
 
 	return (
 		<Layout name={'Community'}>
+			<div className='title'>
+				<h2>We'd love to hear from you.</h2>
+				<div className='line'></div>
+			</div>
 			<div className='input_box'>
 				<input type='text' placeholder='Title' ref={input} />
 				<br />
