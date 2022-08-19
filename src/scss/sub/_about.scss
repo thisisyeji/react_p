@@ -63,11 +63,10 @@
 			p {
 				font-family: 'Bodoni Moda', serif;
 				font-size: 24px;
-				font-weight: 400;
 				font-style: italic;
 				line-height: 2;
 				text-align: left;
-				color: #888;
+				color: #777;
 				margin-bottom: 30px;
 
 				strong {
@@ -174,6 +173,7 @@
 					width: 60%;
 					padding: 0;
 					padding-right: 20px;
+					text-align: left;
 				}
 
 				.story_img {
@@ -538,6 +538,7 @@
 						width: 100%;
 						padding: 0 5%;
 						order: 2;
+						text-align: center;
 					}
 
 					.story_img {
