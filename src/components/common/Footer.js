@@ -17,8 +17,8 @@ function Footer() {
 				<ul className='left'>
 					<li>home</li>
 					<li>products</li>
-					<li>lookbook</li>
-					<li>about</li>
+					<li>booking</li>
+					<li>hotel line</li>
 				</ul>
 
 				<ul className='right'>
