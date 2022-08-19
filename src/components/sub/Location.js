@@ -62,9 +62,9 @@ function Location() {
 	};
 
 	// marker image
-	const imgSrc = process.env.PUBLIC_URL + '/img/logo_orange.png'; // 마커이미지
-	const imgSize = new kakao.maps.Size(60, 40); // 마커이미지 크기
-	const imgOpt = { offset: new kakao.maps.Point(0, 0) };
+	const imgSrc = process.env.PUBLIC_URL + '/img/logo_bb.png'; // 마커이미지
+	const imgSize = new kakao.maps.Size(50, 50); // 마커이미지 크기
+	const imgOpt = { offset: new kakao.maps.Point(15, 0) };
 
 	const markerImg = new kakao.maps.MarkerImage(imgSrc, imgSize, imgOpt);
 
