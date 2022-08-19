@@ -73,6 +73,7 @@
 		.input_box {
 			width: 50%;
 			border: 1px solid #fff;
+			background-color: #fff;
 			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 			padding: 30px 50px;
 			margin-left: 50%;
@@ -81,7 +82,6 @@
 			transition: 0.7s;
 
 			&:hover {
-				background-color: #fff;
 				transform: scale(1.02);
 			}
 
@@ -253,7 +253,7 @@
 					}
 
 					input {
-						height: 80px;
+						height: 60px;
 						font-size: 16px;
 						font-weight: 100;
 						font-style: italic;
@@ -265,7 +265,7 @@
 					}
 
 					textarea {
-						height: 130px;
+						height: 90px;
 						font-family: 'Prompt', sans-serif;
 						font-size: 16px;
 						color: #777;
