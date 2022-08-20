@@ -8,7 +8,9 @@ function Gallery() {
 	const [Items, setItems] = useState([]);
 	const [Open, setOpen] = useState(false);
 	const [Index, setIndex] = useState(0);
+	const [Index2, setIndex2] = useState(0);
 	const frame = useRef(null);
+	const btnBox = useRef(null);
 
 	const [Loading, setLoading] = useState(true);
 
@@ -37,23 +39,27 @@ function Gallery() {
 		}, 1000);
 	};
 
-	useEffect(() => getFlickr(url_user), []);
+	const btnHandle = (index) => {
+		const btns = btnBox.current.querySelectorAll('button');
+		for (const btn of btns) {
+			btn.classList.remove('on');
+		}
+		console.log(Index2);
+		btns[index].classList.add('on');
+	};
+
+	useEffect(() => getFlickr(url_gallery), []);
 
 	return (
 		<>
 			<Layout name={'Gallery'}>
-				<div className='btns'>
+				<div className='btns' ref={btnBox}>
 					<button
+						className='on'
 						onClick={() => {
+							setIndex2(0);
 							setLoading(true);
-							frame.current.classList.remove('on');
-							getFlickr(url_user);
-						}}>
-						Products
-					</button>
-					<button
-						onClick={() => {
-							setLoading(true);
+							btnHandle(Index2);
 							frame.current.classList.remove('on');
 							getFlickr(url_gallery);
 						}}>
@@ -61,7 +67,19 @@ function Gallery() {
 					</button>
 					<button
 						onClick={() => {
+							setIndex2(1);
 							setLoading(true);
+							btnHandle(Index2);
+							frame.current.classList.remove('on');
+							getFlickr(url_user);
+						}}>
+						Products
+					</button>
+					<button
+						onClick={() => {
+							setIndex2(2);
+							setLoading(true);
+							btnHandle(Index2);
 							frame.current.classList.remove('on');
 							getFlickr(url_interest);
 						}}>
@@ -72,7 +90,7 @@ function Gallery() {
 				{Loading && (
 					<img
 						className='loading'
-						src={process.env.PUBLIC_URL + '/img/load.gif'}
+						src={process.env.PUBLIC_URL + '/img/load1.gif'}
 					/>
 				)}
 
