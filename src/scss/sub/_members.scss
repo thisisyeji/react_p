@@ -15,7 +15,7 @@
 		height: 100%;
 		margin: 0 auto;
 		margin-bottom: 100px;
-		border: 1px solid $orange;
+		border: 1px solid #ddd;
 
 		display: flex;
 		flex-wrap: wrap;
@@ -63,7 +63,7 @@
 							text-align: left;
 							padding: 15px;
 							font-weight: 200;
-							color: #333;
+							color: #555;
 
 							&:last-child {
 								text-align: center;
@@ -78,13 +78,14 @@
 								background: transparent;
 								border-radius: 30px;
 								color: $orange;
-								width: 100px;
-								height: 30px;
+								width: 110px;
+								height: 33px;
 
 								display: inline-flex;
 								justify-content: center;
 								align-items: center;
 								margin: 10px;
+								margin-top: 20px;
 								cursor: pointer;
 								transition: 0.5s;
 
@@ -108,7 +109,7 @@
 							label {
 								margin-right: 15px;
 								display: block;
-								color: #666;
+								color: #777;
 								font-size: 15px;
 								width: 90%;
 								margin-bottom: 5px;
@@ -124,6 +125,7 @@
 								width: 100%;
 								font-family: 'Prompt', sans-serif;
 								font-weight: 200;
+								color: #777;
 								border: 1px solid transparent;
 								border-bottom: 1px solid $orange;
 								padding: 10px;
