@@ -35,7 +35,7 @@ function Community() {
 					"I purchased a product from your online Boutique. It's arrived beautifully packaged in very iconic yellow box. Grazie. ",
 			},
 			{
-				title: 'The luxury amenities hotel line',
+				title: 'The luxury amenities hotel line are good.',
 				content:
 					'The line includes a wide range of products, from bath and shower gel to hair products and body care.',
 			},
