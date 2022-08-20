@@ -53,13 +53,14 @@ function Youtube() {
 								</div>
 							</div>
 
-							<div
-								className='btns'
-								onClick={() => {
-									setOpen(true);
-									setIndex(idx);
-								}}>
-								<span>VIEW</span>
+							<div className='btns'>
+								<span
+									onClick={() => {
+										setOpen(true);
+										setIndex(idx);
+									}}>
+									VIEW
+								</span>
 								<div className='line'></div>
 							</div>
 						</article>
