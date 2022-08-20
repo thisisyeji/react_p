@@ -10,59 +10,75 @@ function Gallery() {
 	const [Index, setIndex] = useState(0);
 	const frame = useRef(null);
 
+	const [Loading, setLoading] = useState(true);
+
 	//masonry 전환속도 옵션객체 설정
 	const masonryOptions = { transitionDuration: '0.5s' };
 
 	const key = 'ca6bb9623cb117b2c44bd339126530e9';
 	const method_gallery = 'flickr.galleries.getPhotos';
 	const method_interest = 'flickr.interestingness.getList';
+	const method_user = 'flickr.people.getPhotos';
 	const gallery_id = '72157721034367990';
 	const num = 150;
 	const id = '196138805@N05';
 	const url_gallery = `https://www.flickr.com/services/rest/?method=${method_gallery}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&gallery_id=${gallery_id}`;
 	const url_interest = `https://www.flickr.com/services/rest/?method=${method_interest}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1`;
+	const url_user = `https://www.flickr.com/services/rest/?method=${method_user}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&user_id=${id}`;
 
 	const getFlickr = async (url) => {
 		await axios.get(url).then((json) => {
-			console.log(json.data.photos.photo);
+			// console.log(json.data.photos.photo);
 			setItems(json.data.photos.photo);
 		});
-		frame.current.classList.add('on');
+		setTimeout(() => {
+			frame.current.classList.add('on');
+			setLoading(false);
+		}, 1000);
 	};
 
-	useEffect(
-		() =>
-			setTimeout(() => {
-				getFlickr(url_gallery);
-			}, 500),
-		[]
-	);
+	useEffect(() => getFlickr(url_user), []);
 
 	return (
 		<>
 			<Layout name={'Gallery'}>
-				<div className='left'>
+				<div className='btns'>
 					<button
 						onClick={() => {
+							setLoading(true);
 							frame.current.classList.remove('on');
-							getFlickr(url_interest);
+							getFlickr(url_user);
 						}}>
-						All
+						Products
 					</button>
 					<button
 						onClick={() => {
+							setLoading(true);
 							frame.current.classList.remove('on');
 							getFlickr(url_gallery);
 						}}>
 						Ours
 					</button>
+					<button
+						onClick={() => {
+							setLoading(true);
+							frame.current.classList.remove('on');
+							getFlickr(url_interest);
+						}}>
+						Etc
+					</button>
 				</div>
+
+				{Loading && (
+					<img
+						className='loading'
+						src={process.env.PUBLIC_URL + '/img/load.gif'}
+					/>
+				)}
 
 				<div className='frame' ref={frame}>
 					<Masonry elementType='div' options={masonryOptions}>
 						{Items.map((pic, idx) => {
-							if (pic.title > 15)
-								pic.title = pic.title.substring(0, 15) + '...';
 							return (
 								<article key={idx}>
 									<div className='pic_inner'>
@@ -76,11 +92,11 @@ function Gallery() {
 												}}
 											/>
 										</div>
-										<h2>
-											{pic.title.length > 30
-												? pic.title.substr(0, 30) + '...'
+										<h3>
+											{pic.title.length > 25
+												? pic.title.substr(0, 25) + '...'
 												: pic.title}
-										</h2>
+										</h3>
 									</div>
 								</article>
 							);
