@@ -37,7 +37,7 @@ function Community() {
 			{
 				title: 'The luxury amenities are good.',
 				content:
-					'The line includes a wide range of products, from bath and shower gel to hair products and body care.',
+					'The hotel line includes a wide range of products, from bath and shower gel to hair products and body care.',
 			},
 		];
 

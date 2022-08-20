@@ -5,7 +5,7 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 function Location() {
-	const [Index2, setIndex2] = useState(0);
+	const box = useRef(null);
 
 	// faqs
 	const faqs = [
@@ -25,6 +25,20 @@ function Location() {
 				'Our colognes, conceived traditionally for a male audience, are perfect for women too.',
 		},
 	];
+
+	const answerHandle = (index) => {
+		const articles = box.current.parentElement.querySelectorAll('article');
+		const isOn = articles[index].classList.contains('on');
+
+		if (isOn) {
+			articles[index].classList.remove('on');
+		} else {
+			for (const article of articles) {
+				article.classList.remove('on');
+			}
+			articles[index].classList.add('on');
+		}
+	};
 
 	// map
 	const { kakao } = window;
@@ -179,15 +193,13 @@ function Location() {
 				<h2>Frequently asked questions.</h2>
 				<div className='content'>
 					{faqs.map((faq, idx) => {
-						let on = '';
-						Index2 === idx && (on = 'on');
 						return (
 							<article
 								key={idx}
 								onClick={() => {
-									setIndex2(idx);
+									answerHandle(idx);
 								}}
-								className={on}>
+								ref={box}>
 								<h3>
 									{faq.question}
 									<FontAwesomeIcon icon={faAngleDown} />

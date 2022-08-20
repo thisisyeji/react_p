@@ -139,13 +139,16 @@
 						font-size: 20px;
 						font-weight: 500;
 						color: #555;
-						cursor: pointer;
 						margin-bottom: 10px;
 						transition: color 0.5s;
+						cursor: pointer;
+
+						position: relative;
+						z-index: 2;
 
 						.fa-angle-down {
 							padding: 5px;
-							transition: 0.2s;
+							transition: 0.5s;
 						}
 					}
 
@@ -155,7 +158,7 @@
 						font-weight: 200;
 						opacity: 0;
 						height: 0;
-						transition: 0.5s;
+						transition: height 1s;
 					}
 
 					&.on {
@@ -163,6 +166,7 @@
 							color: rgb(255, 181, 0);
 
 							.fa-angle-down {
+								color: rgb(255, 181, 0);
 								transform: rotate(180deg);
 							}
 						}
