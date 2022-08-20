@@ -6,10 +6,12 @@ import { useState, useEffect, useRef } from 'react';
 function Gallery() {
 	const key = 'ca6bb9623cb117b2c44bd339126530e9';
 	const method_gallery = 'flickr.galleries.getPhotos';
+	const method_interest = 'flickr.interestingness.getList';
 	const gallery_id = '72157721034367990';
 	const num = 150;
 	const id = '196138805@N05';
 	const url_gallery = `https://www.flickr.com/services/rest/?method=${method_gallery}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&gallery_id=${gallery_id}`;
+	const url_interest = `https://www.flickr.com/services/rest/?method=${method_interest}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1`;
 
 	const [Items, setItems] = useState([]);
 	const [Open, setOpen] = useState(false);
@@ -29,7 +31,22 @@ function Gallery() {
 	return (
 		<>
 			<Layout name={'Gallery'}>
-				<div className='left'></div>
+				<div className='left'>
+					<button
+						onClick={() => {
+							frame.current.classList.remove('on');
+							getFlickr(url_interest);
+						}}>
+						All
+					</button>
+					<button
+						onClick={() => {
+							frame.current.classList.remove('on');
+							getFlickr(url_gallery);
+						}}>
+						Ours
+					</button>
+				</div>
 
 				<div className='frame' ref={frame}>
 					{Items.map((pic, idx) => {
