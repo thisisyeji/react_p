@@ -60,6 +60,9 @@
 			justify-content: space-between;
 			align-items: center;
 
+			margin-bottom: 50px;
+			padding-bottom: 100px;
+
 			p {
 				font-family: 'Bodoni Moda', serif;
 				font-size: 24px;
@@ -67,7 +70,7 @@
 				line-height: 2;
 				text-align: left;
 				color: #777;
-				margin-bottom: 30px;
+				margin-bottom: 50px;
 
 				strong {
 					font-size: 32px;
@@ -110,12 +113,11 @@
 				}
 
 				&:hover {
-					width: 220px;
+					width: 250px;
 					background-color: #fff;
-					transform: translateY(30px);
 
 					&::after {
-						width: 220px;
+						width: 250px;
 						opacity: 1;
 					}
 				}
@@ -130,6 +132,7 @@
 				border-radius: 100px;
 				text-align: center;
 				margin: 50px auto;
+				transition: 1s;
 
 				&::before {
 					position: absolute;
