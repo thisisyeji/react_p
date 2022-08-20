@@ -12,6 +12,8 @@ function Gallery() {
 	const url_gallery = `https://www.flickr.com/services/rest/?method=${method_gallery}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&gallery_id=${gallery_id}`;
 
 	const [Items, setItems] = useState([]);
+	const [Open, setOpen] = useState(false);
+	const [Index, setIndex] = useState(0);
 	const frame = useRef(null);
 
 	const getFlickr = async (url) => {
@@ -56,6 +58,15 @@ function Gallery() {
 					})}
 				</div>
 			</Layout>
+
+			{Open && (
+				<Popup setOpen={setOpen}>
+					<img
+						src={`https://live.staticflickr.com/${Items[Index].server}/${Items[Index].id}_${Items[Index].secret}_b.jpg`}
+						alt={Items[Index].title}
+					/>
+				</Popup>
+			)}
 		</>
 	);
 }
