@@ -132,12 +132,13 @@ function Community() {
 				<div className='line'></div>
 			</div>
 			<div className='input_box'>
-				<input type='text' placeholder='Title' ref={input} />
+				<input type='text' placeholder='Title' maxLength={60} ref={input} />
 				<br />
 				<textarea
 					cols='30'
 					rows='3'
 					placeholder='Content'
+					maxLength={300}
 					ref={textarea}></textarea>
 				<br />
 				<div className='btns'>
@@ -159,6 +160,7 @@ function Community() {
 									<div className='editText'>
 										<input
 											type='text'
+											maxLength={60}
 											ref={inputEdit}
 											defaultValue={post.title}
 										/>
@@ -166,6 +168,7 @@ function Community() {
 										<textarea
 											cols='30'
 											rows='3'
+											maxLength={300}
 											ref={textareaEdit}
 											defaultValue={post.content}></textarea>
 										<br />
