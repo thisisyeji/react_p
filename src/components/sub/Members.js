@@ -139,6 +139,7 @@ function Members() {
 											name='userid'
 											id='userid'
 											placeholder='Enter your ID.'
+											maxLength={15}
 											onChange={handleChange}
 										/>
 										<span className='err'>{Err.userid}</span>
@@ -157,6 +158,7 @@ function Members() {
 											name='pwd1'
 											id='pwd1'
 											placeholder='Enter your Password.'
+											maxLength={15}
 											onChange={handleChange}
 										/>
 										<span className='err'>{Err.pwd1}</span>
@@ -174,6 +176,7 @@ function Members() {
 											name='pwd2'
 											id='pwd2'
 											placeholder='Confirm your Password.'
+											maxLength={15}
 											onChange={handleChange}
 										/>
 										<span className='err'>{Err.pwd2}</span>
@@ -191,6 +194,7 @@ function Members() {
 											name='email'
 											id='email'
 											placeholder='Enter your E-mail.'
+											maxLength={50}
 											onChange={handleChange}
 										/>
 										<span className='err'>{Err.email}</span>
@@ -307,6 +311,7 @@ function Members() {
 											cols='30'
 											rows='3'
 											placeholder='Please write any comments.'
+											maxLength={200}
 											onChange={handleChange}></textarea>
 									</td>
 								</tr>
