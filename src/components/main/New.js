@@ -45,7 +45,7 @@ function New() {
 	}, [Posts]);
 
 	return (
-		<section id='New'>
+		<section id='New' className='myScroll'>
 			<h1>New</h1>
 			{Posts.map((post, idx) => {
 				if (idx >= 4) return;

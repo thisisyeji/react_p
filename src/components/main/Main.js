@@ -7,14 +7,14 @@ import Btns from './Btns';
 
 function Main() {
 	return (
-		<>
+		<main>
 			<Header type={'main'} />
 			<Visual />
 			<Vids />
 			<Pics />
 			<New />
 			<Btns />
-		</>
+		</main>
 	);
 }
 
