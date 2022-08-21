@@ -2,8 +2,9 @@
 	font-family: 'Prompt', sans-serif;
 
 	.inner {
-		padding: 100px 0;
 		margin-bottom: 100px;
+		padding-left: 0;
+		padding-right: 0;
 
 		display: flex;
 		flex-wrap: wrap;
@@ -11,8 +12,8 @@
 
 		.title {
 			width: 100%;
-			padding: 0 10vw;
 			margin-bottom: 100px;
+			padding: 0 10vw;
 
 			h2 {
 				width: 50%;
