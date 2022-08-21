@@ -7,19 +7,19 @@ function Youtube() {
 	const [Vids, setVids] = useState([]);
 	const [Index, setIndex] = useState(0);
 
-	useEffect(() => {
+	const getYotube = async () => {
 		const key = 'AIzaSyD1ZRgZNZXs590CNC6IbqqDi5RFFZNf1VM';
 		const playlist = 'PL4lFp_wxDge9JYZdXJgroiHplCVIIJ9vq';
 		const num = 6;
 		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlist}&maxResults=${num}`;
 
-		axios.get(url).then((json) => {
+		await axios.get(url).then((json) => {
 			// console.log(json.data.items);
 			setVids(json.data.items);
 		});
-	}, []);
+	};
 
-	const [Open, setOpen] = useState(false);
+	useEffect(getYotube, []);
 
 	return (
 		<>
