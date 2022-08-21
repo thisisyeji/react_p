@@ -4,11 +4,14 @@ import axios from 'axios';
 import Masonry from 'react-masonry-component';
 import { useState, useEffect, useRef } from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
+
 function Gallery() {
 	const [Items, setItems] = useState([]);
 	const [Open, setOpen] = useState(false);
+	const [EnableClick, setEnableClick] = useState(false);
 	const [Index, setIndex] = useState(0);
-	const [Index2, setIndex2] = useState(0);
 	const frame = useRef(null);
 	const btnBox = useRef(null);
 
@@ -36,6 +39,7 @@ function Gallery() {
 		setTimeout(() => {
 			frame.current.classList.add('on');
 			setLoading(false);
+			setEnableClick(true);
 		}, 1000);
 	};
 
@@ -44,7 +48,6 @@ function Gallery() {
 		for (const btn of btns) {
 			btn.classList.remove('on');
 		}
-		console.log(Index2);
 		btns[index].classList.add('on');
 	};
 
@@ -53,47 +56,53 @@ function Gallery() {
 	return (
 		<>
 			<Layout name={'Gallery'}>
+				<input type='text' ref={input} />
+				<button}>
+					<FontAwesomeIcon icon={faArrowCircleRight} />
+				</button>
+
 				<div className='btns' ref={btnBox}>
 					<button
 						className='on'
 						onClick={() => {
-							setIndex2(0);
+							if (!EnableClick) return;
 							setLoading(true);
-							btnHandle(Index2);
+							btnHandle(0);
 							frame.current.classList.remove('on');
 							getFlickr(url_gallery);
+							setEnableClick(true);
 						}}>
 						Ours
 					</button>
 					<button
 						onClick={() => {
-							setIndex2(1);
+							if (!EnableClick) return;
 							setLoading(true);
-							btnHandle(Index2);
+							btnHandle(1);
 							frame.current.classList.remove('on');
 							getFlickr(url_user);
+							setEnableClick(true);
 						}}>
 						Products
 					</button>
 					<button
 						onClick={() => {
-							setIndex2(2);
+							if (!EnableClick) return;
 							setLoading(true);
-							btnHandle(Index2);
+							btnHandle(2);
 							frame.current.classList.remove('on');
 							getFlickr(url_interest);
+							setEnableClick(true);
 						}}>
 						Etc
 					</button>
 				</div>
-
 				{Loading && (
 					<img
 						className='loading'
 						src={process.env.PUBLIC_URL + '/img/load1.gif'}
 					/>
 				)}
-
 				<div className='frame' ref={frame}>
 					<Masonry elementType='div' options={masonryOptions}>
 						{Items.map((pic, idx) => {
