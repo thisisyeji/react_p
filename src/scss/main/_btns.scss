@@ -3,15 +3,17 @@
 	top: 50%;
 	right: 22px;
 	transform: rotateX(-50%);
-	z-index: 3;
+	z-index: 4;
 
 	li {
 		width: 7px;
 		height: 7px;
 		border: 1px solid #999;
 		border-radius: 5px;
+		background-color: #fffcf0;
 		margin-bottom: 10px;
 		transition: 0.5s;
+		cursor: pointer;
 
 		&.on {
 			width: 7px;

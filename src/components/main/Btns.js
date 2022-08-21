@@ -35,6 +35,10 @@ function Btns() {
 
 	useEffect(() => {
 		btnRef.current.children[0].classList.add('on');
+		btnRef.current.parentElement
+			.querySelectorAll('.myScroll')[0]
+			.classList.add('on');
+
 		getPos();
 
 		// 브라우저 리사이즈시 offsetTop값 가져오는 함수 실행
@@ -51,10 +55,21 @@ function Btns() {
 
 	return (
 		<ul className='scroll_nav' ref={btnRef}>
-			<li className='on'></li>
-			<li></li>
-			<li></li>
-			<li></li>
+			{Array(num)
+				.fill()
+				.map((_, idx) => {
+					return (
+						<li
+							key={idx}
+							onClick={() => {
+								new Anime(window, {
+									prop: 'scroll',
+									value: pos.current[idx],
+									duration: speed,
+								});
+							}}></li>
+					);
+				})}
 		</ul>
 	);
 }
