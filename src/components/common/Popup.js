@@ -1,26 +1,36 @@
-import { useEffect } from 'react';
+import { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
 
-function Popup({ setOpen, children }) {
-	useEffect(() => {
-		document.body.style.overflowY = 'hidden';
+const Popup = forwardRef(({ children }, ref) => {
+	const [Open, setOpen] = useState(false);
 
-		return () => {
-			document.body.style.overflowY = 'auto';
+	useImperativeHandle(ref, () => {
+		return {
+			open: () => setOpen(true),
 		};
-	}, []);
+	});
+
+	useEffect(() => {
+		Open
+			? (document.body.style.overflowY = 'hidden')
+			: (document.body.style.overflowY = 'auto');
+	}, [Open]);
 
 	return (
-		<aside className='pop'>
-			<span
-				className='close'
-				onClick={() => {
-					setOpen(false);
-				}}>
-				close
-			</span>
-			<div className='con'>{children}</div>
-		</aside>
+		<>
+			{Open && (
+				<aside className='pop'>
+					<span
+						className='close'
+						onClick={() => {
+							setOpen(false);
+						}}>
+						close
+					</span>
+					<div className='con'>{children}</div>
+				</aside>
+			)}
+		</>
 	);
-}
+});
 
 export default Popup;

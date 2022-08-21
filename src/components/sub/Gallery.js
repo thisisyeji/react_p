@@ -9,12 +9,12 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function Gallery() {
 	const [Items, setItems] = useState([]);
-	const [Open, setOpen] = useState(false);
 	const [EnableClick, setEnableClick] = useState(false);
 	const [Index, setIndex] = useState(0);
 	const frame = useRef(null);
 	const btnBox = useRef(null);
 	const input = useRef(null);
+	const pop = useRef(null);
 
 	const [Loading, setLoading] = useState(true);
 
@@ -148,7 +148,7 @@ function Gallery() {
 										<div
 											className='pic'
 											onClick={() => {
-												setOpen(true);
+												pop.current.open();
 												setIndex(idx);
 											}}>
 											<img
@@ -170,14 +170,14 @@ function Gallery() {
 				</div>
 			</Layout>
 
-			{Open && (
-				<Popup setOpen={setOpen}>
+			<Popup ref={pop}>
+				{Items.length !== 0 && (
 					<img
 						src={`https://live.staticflickr.com/${Items[Index].server}/${Items[Index].id}_${Items[Index].secret}_b.jpg`}
 						alt={Items[Index].title}
 					/>
-				</Popup>
-			)}
+				)}
+			</Popup>
 		</>
 	);
 }
