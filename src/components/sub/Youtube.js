@@ -1,11 +1,13 @@
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 
 function Youtube() {
 	const [Vids, setVids] = useState([]);
 	const [Index, setIndex] = useState(0);
+
+	const pop = useRef(null);
 
 	const getYotube = async () => {
 		const key = 'AIzaSyD1ZRgZNZXs590CNC6IbqqDi5RFFZNf1VM';
@@ -56,7 +58,7 @@ function Youtube() {
 							<div className='btns'>
 								<span
 									onClick={() => {
-										setOpen(true);
+										pop.current.open();
 										setIndex(idx);
 									}}>
 									VIEW
@@ -67,14 +69,15 @@ function Youtube() {
 					);
 				})}
 			</Layout>
-			{Open && (
-				<Popup setOpen={setOpen}>
+
+			<Popup ref={pop}>
+				{Vids.length !== 0 && (
 					<iframe
 						src={`https://www.youtube.com/embed/${Vids[Index].snippet.resourceId.videoId}`}
 						frameBorder='0'
 						allowFullScreen></iframe>
-				</Popup>
-			)}
+				)}
+			</Popup>
 		</>
 	);
 }
