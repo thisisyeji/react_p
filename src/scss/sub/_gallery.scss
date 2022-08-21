@@ -1,10 +1,10 @@
 .Gallery {
 	font-family: 'Prompt', sans-serif;
-	// background: rgba(0, 0, 0, 0.7);
 
 	.inner {
 		padding: 200px 0 100px;
 		margin-bottom: 100px;
+		overflow-x: hidden;
 
 		display: flex;
 		flex-wrap: wrap;
@@ -106,8 +106,8 @@
 				&::after {
 					content: '';
 					display: block;
-					width: 150px;
-					height: 70px;
+					width: 100%;
+					height: 100%;
 					background: transparent;
 					border: 1px solid transparent;
 					border-radius: 50%;
@@ -191,7 +191,6 @@
 							height: 100%;
 							object-fit: cover;
 							cursor: pointer;
-							// filter: grayscale(1);
 							transition: 0.5s;
 						}
 					}
@@ -204,6 +203,164 @@
 						text-align: right;
 						padding: 0 10px;
 						transition: 0.5s;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $desktop) {
+	.Gallery {
+		.inner {
+			.title {
+				h2 {
+					width: 60%;
+					font-size: 9vw;
+				}
+			}
+
+			.btns {
+				button {
+					width: 140px;
+					height: 60px;
+				}
+			}
+
+			.loading {
+				transform: translateX(-50%) scale(0.9);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.Gallery {
+		.inner {
+			padding-top: 150px;
+			.title {
+				h2 {
+					width: 60%;
+					font-size: 9vw;
+				}
+			}
+
+			.search {
+				width: 300px;
+
+				&:hover {
+					width: 400px;
+				}
+
+				input {
+					width: 85%;
+				}
+			}
+
+			.btns {
+				margin-top: 20px;
+				button {
+					width: 120px;
+					height: 60px;
+					font: 500 20px/1 'Prompt';
+				}
+			}
+
+			.loading {
+				padding-top: 600px;
+				transform: translateX(-50%) scale(0.8);
+			}
+
+			.frame {
+				article {
+					width: calc(100% / 2);
+
+					.pic_inner {
+						h3 {
+							font: 200 18px/1 'Bodoni Moda';
+							font-style: italic;
+							color: #555;
+							text-transform: capitalize;
+							text-align: right;
+							padding: 0 10px;
+							transition: 0.5s;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.Gallery {
+		.inner {
+			padding-top: 100px;
+			.title {
+				margin-bottom: 50px;
+				h2 {
+					width: 100%;
+					font-size: 9vw;
+				}
+			}
+
+			.search {
+				width: 200px;
+				margin-bottom: 50px;
+
+				&:hover {
+					width: 250px;
+				}
+
+				input {
+					width: 80%;
+					font-size: 18px;
+				}
+
+				button {
+					width: 35px;
+					height: 35px;
+				}
+			}
+
+			.btns {
+				width: 100%;
+				margin-top: 20px;
+
+				justify-content: center;
+
+				button {
+					width: calc(100% / 3 - 10px);
+					height: 50px;
+					font: 500 16px/1 'Prompt';
+				}
+			}
+
+			.loading {
+				padding-top: 300px;
+				transform: translateX(-50%) scale(0.6);
+			}
+
+			.frame {
+				article {
+					width: 100%;
+
+					.pic_inner {
+						&:hover {
+							transform: translateY(0);
+							background: #fff;
+							box-shadow: 10px 10px 0 $orange;
+						}
+
+						h3 {
+							font: 200 16px/1 'Bodoni Moda';
+							font-style: italic;
+							color: #555;
+							text-transform: capitalize;
+							text-align: right;
+							padding: 0 10px;
+							transition: 0.5s;
+						}
 					}
 				}
 			}

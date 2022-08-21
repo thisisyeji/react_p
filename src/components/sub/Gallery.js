@@ -19,7 +19,7 @@ function Gallery() {
 	const [Loading, setLoading] = useState(true);
 
 	//masonry 전환속도 옵션객체 설정
-	const masonryOptions = { transitionDuration: '0.5s' };
+	const masonryOptions = { transitionDuration: '0.7s' };
 
 	const num = 150;
 	const id = '196138805@N05';
@@ -74,7 +74,7 @@ function Gallery() {
 		setEnableClick(true);
 		setTimeout(() => {
 			input.current.value = '';
-		}, 500);
+		}, 2000);
 	};
 
 	const showGallery = () => {
