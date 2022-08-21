@@ -160,10 +160,9 @@
 			}
 
 			article {
-				width: calc(100% / 3);
+				width: calc(100% / 4);
 				float: left;
 				padding: 10px;
-				transition: 0.5s;
 
 				.pic_inner {
 					width: 100%;
@@ -254,6 +253,11 @@
 
 			.loading {
 				transform: translateX(-50%) scale(0.9);
+			}
+			.frame {
+				article {
+					width: calc(100% / 3);
+				}
 			}
 		}
 	}
