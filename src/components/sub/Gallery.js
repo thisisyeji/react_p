@@ -46,7 +46,7 @@ function Gallery() {
 		await axios.get(url).then((json) => {
 			// console.log(json.data.photos.photo);
 			if (json.data.photos.photo.length === 0)
-				return alert('There are no matching data. Please try again.');
+				return alert('There are no results found.');
 			setItems(json.data.photos.photo);
 		});
 		setTimeout(() => {
@@ -66,7 +66,7 @@ function Gallery() {
 
 	const showSearch = () => {
 		const result = input.current.value.trim();
-		if (!result) return alert('Please enter any keyword.');
+		if (!result) return alert('Please enter the keyword.');
 		if (!EnableClick) return;
 		setLoading(true);
 		frame.current.classList.remove('on');

@@ -55,7 +55,7 @@ function Community() {
 	//글 저장 함수
 	const createPost = () => {
 		if (!input.current.value.trim() || !textarea.current.value.trim()) {
-			return alert('Please enter your title and content.');
+			return alert('Please enter the title and content.');
 		}
 		setPosts([
 			{ title: input.current.value, content: textarea.current.value },
@@ -105,7 +105,7 @@ function Community() {
 	const updatePost = (index) => {
 		if (!inputEdit.current.value.trim() || !textareaEdit.current.value.trim()) {
 			resetForm();
-			return alert('Please type your new title and content');
+			return alert('Please type the new title and content');
 		}
 
 		setPosts(
