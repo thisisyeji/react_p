@@ -1,6 +1,6 @@
 function Visual() {
 	return (
-		<figure className='visual'>
+		<figure id='Visual'>
 			<video
 				src={process.env.PUBLIC_URL + '/img/vid0.mp4'}
 				muted
