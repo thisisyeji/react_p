@@ -3,34 +3,101 @@
 	// background: rgba(0, 0, 0, 0.7);
 
 	.inner {
-		padding: 100px 30px 100px 0;
-		margin-top: 400px;
-		padding-top: 250px;
+		padding: 200px 0 100px;
 		margin-bottom: 100px;
 
 		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 
-		.btns {
-			width: 20%;
-			margin-top: 50px;
+		.title {
+			width: 100%;
+			padding: 0 10vw;
+			margin-bottom: 100px;
 
-			display: flex;
-			flex-direction: column;
-			flex-wrap: wrap;
-			justify-content: flex-start;
-			align-items: flex-start;
+			h2 {
+				width: 50%;
+				color: rgba(255, 181, 0, 0.8);
+				font-size: 90px;
+			}
+		}
+
+		.search {
+			width: 400px;
+			border-bottom: 1px solid #555;
+			margin-bottom: 100px;
+			padding: 10px 0;
+			transition: 0.5s;
+
+			&:hover {
+				width: 500px;
+				border-bottom: 1px solid $orange;
+
+				button {
+					border: 1px solid $orange;
+				}
+			}
+
+			input {
+				width: 90%;
+				height: 40px;
+				font: 100 22px/1 'Bodoni Moda';
+				font-style: italic;
+				color: #555;
+				background: transparent;
+				border: none;
+				padding: 10px;
+
+				&::placeholder {
+					color: rgb(204, 203, 203);
+					font-size: 22px;
+				}
+
+				&:active,
+				&:focus {
+					border: none;
+					outline: none;
+				}
+			}
 
 			button {
-				width: 170px;
+				width: 40px;
+				height: 40px;
+				background: transparent;
+				border-radius: 50%;
+				border: 1px solid #555;
+				transform: rotate(45deg);
+				transition: 0.5s;
+				cursor: pointer;
+
+				&:hover {
+					color: $orange;
+					transform: rotate(405deg);
+				}
+			}
+		}
+
+		.btns {
+			width: 100%;
+			margin-top: 50px;
+			padding: 0 30px;
+
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			align-items: flex-end;
+			gap: 10px;
+
+			button {
+				width: 150px;
 				height: 70px;
 				border: none;
 				color: #999;
 				background: transparent;
+				text-align: center;
 				font: 500 24px/1 'Prompt';
-				text-align: left;
 				cursor: pointer;
-				padding-left: 40px;
-				margin-bottom: 30px;
+				border-radius: 50%;
 				transition: 0.5s;
 
 				position: relative;
@@ -39,16 +106,17 @@
 				&::after {
 					content: '';
 					display: block;
-					width: 20px;
+					width: 150px;
 					height: 70px;
-					color: inherit;
-					background: #333;
-					border-top: 5px solid #333;
+					background: transparent;
+					border: 1px solid transparent;
+					border-radius: 50%;
+
 					position: absolute;
-					top: 0;
-					left: 0;
+					bottom: 2px;
+					right: -6px;
 					z-index: -1;
-					transition: 0.5s;
+					transition: 0.2s 0.1s;
 				}
 
 				&:hover {
@@ -56,11 +124,11 @@
 				}
 
 				&.on {
+					border: 1px solid $orange;
 					color: $orange;
 
 					&::after {
-						width: 170px;
-						border-top: 5px solid $orange;
+						border: 1px solid $orange;
 					}
 				}
 			}
@@ -70,18 +138,14 @@
 			position: absolute;
 			top: 0;
 			left: 50%;
-			padding-top: 100px;
+			padding-top: 800px;
 			transform: translateX(-50%);
 		}
 
 		.frame {
-			width: 80%;
-			height: 100vh;
+			width: 100%;
 			transform: translateY(200px);
-			background-color: #333;
-			padding: 50px 30px;
-			overflow-y: scroll;
-			overflow-x: hidden;
+			padding: 50px 10px;
 			transition: 0.5s;
 			opacity: 0;
 
@@ -99,32 +163,26 @@
 			article {
 				width: calc(100% / 3);
 				float: left;
-				padding: 20px;
-				border: 2px solid transparent;
+				padding: 10px;
 				transition: 0.5s;
-
-				&:hover {
-					border: 2px solid $orange;
-					background: #333;
-					box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-
-					.pic_inner {
-						.pic img {
-							filter: grayscale(0) brightness(1.1);
-						}
-
-						h3 {
-							color: $orange;
-						}
-					}
-				}
 
 				.pic_inner {
 					width: 100%;
 					position: relative;
+					border: 1px solid #666;
+					padding: 20px;
+					transition: 0.5s;
+
+					&:hover {
+						transform: translateY(-10px);
+						background: #fff;
+						box-shadow: 10px 10px 0 $orange;
+					}
 
 					.pic {
 						width: 100%;
+						border-bottom: 1px solid #666;
+						padding-bottom: 10px;
 						margin: 0 auto;
 						margin-bottom: 10px;
 
@@ -133,17 +191,16 @@
 							height: 100%;
 							object-fit: cover;
 							cursor: pointer;
-							filter: grayscale(1);
+							// filter: grayscale(1);
 							transition: 0.5s;
 						}
 					}
 
 					h3 {
 						font: 200 18px/1 'Bodoni Moda';
-						// font-family: 'Bodoni Moda', serif;
 						font-style: italic;
 						color: #555;
-						text-transform: lowercase;
+						text-transform: capitalize;
 						text-align: right;
 						padding: 0 10px;
 						transition: 0.5s;

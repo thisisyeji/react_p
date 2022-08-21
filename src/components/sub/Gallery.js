@@ -109,16 +109,22 @@ function Gallery() {
 	return (
 		<>
 			<Layout name={'Gallery'}>
-				<input
-					type='text'
-					ref={input}
-					onKeyUp={(e) => {
-						if (e.key === 'Enter') showSearch();
-					}}
-				/>
-				<button onClick={showSearch}>
-					<FontAwesomeIcon icon={faArrowRight} />
-				</button>
+				<div className='title'>
+					<h2>Find your interest</h2>
+				</div>
+				<div className='search'>
+					<input
+						type='text'
+						ref={input}
+						placeholder='Here!'
+						onKeyUp={(e) => {
+							if (e.key === 'Enter') showSearch();
+						}}
+					/>
+					<button onClick={showSearch}>
+						<FontAwesomeIcon icon={faArrowRight} />
+					</button>
+				</div>
 
 				<div className='btns' ref={btnBox}>
 					<button className='on' onClick={showGallery}>
@@ -141,7 +147,7 @@ function Gallery() {
 									<div className='pic_inner'>
 										<div className='pic'>
 											<img
-												src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
+												src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}.jpg`}
 												alt={pic.title}
 												onClick={() => {
 													setOpen(true);
