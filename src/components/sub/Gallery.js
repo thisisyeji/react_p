@@ -20,18 +20,24 @@ function Gallery() {
 	//masonry 전환속도 옵션객체 설정
 	const masonryOptions = { transitionDuration: '0.5s' };
 
-	const key = 'ca6bb9623cb117b2c44bd339126530e9';
-	const method_gallery = 'flickr.galleries.getPhotos';
-	const method_interest = 'flickr.interestingness.getList';
-	const method_user = 'flickr.people.getPhotos';
-	const gallery_id = '72157721034367990';
 	const num = 150;
 	const id = '196138805@N05';
-	const url_gallery = `https://www.flickr.com/services/rest/?method=${method_gallery}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&gallery_id=${gallery_id}`;
-	const url_interest = `https://www.flickr.com/services/rest/?method=${method_interest}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1`;
-	const url_user = `https://www.flickr.com/services/rest/?method=${method_user}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&user_id=${id}`;
 
-	const getFlickr = async (url) => {
+	const getFlickr = async (opt) => {
+		const key = 'ca6bb9623cb117b2c44bd339126530e9';
+		const method_gallery = 'flickr.galleries.getPhotos';
+		const method_interest = 'flickr.interestingness.getList';
+		const method_user = 'flickr.people.getPhotos';
+		const gallery_id = '72157721034367990';
+		let url = '';
+
+		if (opt.type === 'gallery')
+			url = `https://www.flickr.com/services/rest/?method=${method_gallery}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&gallery_id=${gallery_id}`;
+		if (opt.type === 'interest')
+			url = `https://www.flickr.com/services/rest/?method=${method_interest}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1`;
+		if (opt.type === 'user')
+			url = `https://www.flickr.com/services/rest/?method=${method_user}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&user_id=${id}`;
+
 		await axios.get(url).then((json) => {
 			// console.log(json.data.photos.photo);
 			setItems(json.data.photos.photo);
@@ -51,13 +57,13 @@ function Gallery() {
 		btns[index].classList.add('on');
 	};
 
-	useEffect(() => getFlickr(url_gallery), []);
+	useEffect(() => getFlickr({ type: 'gallery' }), []);
 
 	return (
 		<>
 			<Layout name={'Gallery'}>
-				<input type='text' ref={input} />
-				<button}>
+				<input type='text' />
+				<button>
 					<FontAwesomeIcon icon={faArrowCircleRight} />
 				</button>
 
@@ -69,7 +75,7 @@ function Gallery() {
 							setLoading(true);
 							btnHandle(0);
 							frame.current.classList.remove('on');
-							getFlickr(url_gallery);
+							getFlickr({ type: 'gallery' });
 							setEnableClick(true);
 						}}>
 						Ours
@@ -80,7 +86,7 @@ function Gallery() {
 							setLoading(true);
 							btnHandle(1);
 							frame.current.classList.remove('on');
-							getFlickr(url_user);
+							getFlickr({ type: 'user' });
 							setEnableClick(true);
 						}}>
 						Products
@@ -91,7 +97,7 @@ function Gallery() {
 							setLoading(true);
 							btnHandle(2);
 							frame.current.classList.remove('on');
-							getFlickr(url_interest);
+							getFlickr({ type: 'interest' });
 							setEnableClick(true);
 						}}>
 						Etc
