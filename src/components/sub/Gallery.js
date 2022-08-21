@@ -5,7 +5,7 @@ import Masonry from 'react-masonry-component';
 import { useState, useEffect, useRef } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function Gallery() {
 	const [Items, setItems] = useState([]);
@@ -14,6 +14,7 @@ function Gallery() {
 	const [Index, setIndex] = useState(0);
 	const frame = useRef(null);
 	const btnBox = useRef(null);
+	const input = useRef(null);
 
 	const [Loading, setLoading] = useState(true);
 
@@ -28,6 +29,8 @@ function Gallery() {
 		const method_gallery = 'flickr.galleries.getPhotos';
 		const method_interest = 'flickr.interestingness.getList';
 		const method_user = 'flickr.people.getPhotos';
+		const method_search = 'flickr.photos.search';
+
 		const gallery_id = '72157721034367990';
 		let url = '';
 
@@ -37,6 +40,8 @@ function Gallery() {
 			url = `https://www.flickr.com/services/rest/?method=${method_interest}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1`;
 		if (opt.type === 'user')
 			url = `https://www.flickr.com/services/rest/?method=${method_user}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&user_id=${id}`;
+		if (opt.type === 'search')
+			url = `https://www.flickr.com/services/rest/?method=${method_search}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&tags=${opt.tag}`;
 
 		await axios.get(url).then((json) => {
 			// console.log(json.data.photos.photo);
@@ -57,51 +62,65 @@ function Gallery() {
 		btns[index].classList.add('on');
 	};
 
+	const showSearch = () => {
+		const result = input.current.value.trim();
+		if (!result) return alert('Please enter any keyword.');
+		if (!EnableClick) return;
+		setLoading(true);
+		frame.current.classList.remove('on');
+		getFlickr({ type: 'search', tag: result });
+		setEnableClick(true);
+		setTimeout(() => {
+			input.current.value = '';
+		}, 500);
+	};
+
+	const showGallery = () => {
+		if (!EnableClick) return;
+		setLoading(true);
+		btnHandle(0);
+		frame.current.classList.remove('on');
+		getFlickr({ type: 'gallery' });
+		setEnableClick(true);
+	};
+
+	const showUser = () => {
+		if (!EnableClick) return;
+		setLoading(true);
+		btnHandle(1);
+		frame.current.classList.remove('on');
+		getFlickr({ type: 'user' });
+		setEnableClick(true);
+	};
+
+	const showInterest = () => {
+		if (!EnableClick) return;
+		setLoading(true);
+		btnHandle(2);
+		frame.current.classList.remove('on');
+		getFlickr({ type: 'interest' });
+		setEnableClick(true);
+	};
+
 	useEffect(() => getFlickr({ type: 'gallery' }), []);
 
 	return (
 		<>
 			<Layout name={'Gallery'}>
-				<input type='text' />
-				<button>
-					<FontAwesomeIcon icon={faArrowCircleRight} />
+				<input type='text' ref={input} />
+				<button
+					onClick={() => {
+						showSearch();
+					}}>
+					<FontAwesomeIcon icon={faArrowRight} />
 				</button>
 
 				<div className='btns' ref={btnBox}>
-					<button
-						className='on'
-						onClick={() => {
-							if (!EnableClick) return;
-							setLoading(true);
-							btnHandle(0);
-							frame.current.classList.remove('on');
-							getFlickr({ type: 'gallery' });
-							setEnableClick(true);
-						}}>
+					<button className='on' onClick={() => showGallery()}>
 						Ours
 					</button>
-					<button
-						onClick={() => {
-							if (!EnableClick) return;
-							setLoading(true);
-							btnHandle(1);
-							frame.current.classList.remove('on');
-							getFlickr({ type: 'user' });
-							setEnableClick(true);
-						}}>
-						Products
-					</button>
-					<button
-						onClick={() => {
-							if (!EnableClick) return;
-							setLoading(true);
-							btnHandle(2);
-							frame.current.classList.remove('on');
-							getFlickr({ type: 'interest' });
-							setEnableClick(true);
-						}}>
-						Etc
-					</button>
+					<button onClick={() => showUser()}>Products</button>
+					<button onClick={() => showInterest()}>Etc</button>
 				</div>
 				{Loading && (
 					<img
