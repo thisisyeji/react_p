@@ -45,6 +45,8 @@ function Gallery() {
 
 		await axios.get(url).then((json) => {
 			// console.log(json.data.photos.photo);
+			if (json.data.photos.photo.length === 0)
+				return alert('There are no matching data. Please try again.');
 			setItems(json.data.photos.photo);
 		});
 		setTimeout(() => {
@@ -107,20 +109,23 @@ function Gallery() {
 	return (
 		<>
 			<Layout name={'Gallery'}>
-				<input type='text' ref={input} />
-				<button
-					onClick={() => {
-						showSearch();
-					}}>
+				<input
+					type='text'
+					ref={input}
+					onKeyUp={(e) => {
+						if (e.key === 'Enter') showSearch();
+					}}
+				/>
+				<button onClick={showSearch}>
 					<FontAwesomeIcon icon={faArrowRight} />
 				</button>
 
 				<div className='btns' ref={btnBox}>
-					<button className='on' onClick={() => showGallery()}>
+					<button className='on' onClick={showGallery}>
 						Ours
 					</button>
-					<button onClick={() => showUser()}>Products</button>
-					<button onClick={() => showInterest()}>Etc</button>
+					<button onClick={showUser}>Products</button>
+					<button onClick={showInterest}>Etc</button>
 				</div>
 				{Loading && (
 					<img
