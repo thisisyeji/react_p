@@ -5,7 +5,6 @@ header {
 	border-bottom: 1px solid #b6a999;
 
 	position: relative;
-	z-index: 2;
 
 	display: flex;
 	justify-content: space-between;
@@ -15,6 +14,9 @@ header {
 		height: 100%;
 		padding: 0 5vw;
 		transition: 0.5s;
+
+		position: relative;
+		z-index: 4;
 
 		img {
 			height: 35%;
@@ -29,6 +31,9 @@ header {
 		justify-content: space-between;
 		gap: 10px;
 		padding-right: 10vw;
+
+		position: relative;
+		z-index: 2;
 
 		li {
 			a {
@@ -57,7 +62,7 @@ header {
 		position: fixed;
 		right: 0px;
 		top: 0px;
-		z-index: 2;
+		z-index: 5;
 		font-size: 22px;
 		background-color: #fffcf0;
 		border-radius: 50%;
@@ -86,6 +91,7 @@ header {
 		position: fixed;
 		top: 0;
 		right: 0;
+		z-index: 2;
 
 		display: flex;
 		flex-direction: column;
@@ -117,6 +123,7 @@ header {
 		position: fixed;
 		top: 0;
 		right: 0;
+		z-index: 4;
 		width: 100%;
 		box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 		opacity: 0;
@@ -142,6 +149,8 @@ header {
 			border-top: 1px solid rgb(255, 181, 0);
 			border-bottom: 1px solid rgb(255, 181, 0);
 			text-align: center;
+
+			position: relative;
 
 			li {
 				width: 100%;
@@ -205,6 +214,9 @@ header {
 header.sub {
 	border-bottom: 1px solid transparent;
 
+	position: relative;
+	z-index: 3;
+
 	h1 {
 		height: 100%;
 		padding: 0 5vw;
@@ -245,6 +257,7 @@ header.sub {
 		top: 0;
 		left: 0;
 		border-bottom: 1px solid transparent;
+		z-index: 3;
 
 		h1 {
 			width: 100%;
