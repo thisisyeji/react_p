@@ -20,6 +20,7 @@ function Intro() {
 					</div>
 					AROUND THE WORLD
 				</h2>
+				<div className='btn'>Explore</div>
 			</div>
 		</section>
 	);
