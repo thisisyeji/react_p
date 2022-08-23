@@ -1,4 +1,5 @@
 import Header from '../common/Header';
+import Intro from './Intro';
 import Visual from './Visual';
 import Vids from './Vids';
 import Pics from './Pics';
@@ -9,6 +10,7 @@ function Main() {
 	return (
 		<main>
 			<Header type={'main'} />
+			<Intro />
 			<Visual />
 			<Vids />
 			<Pics />

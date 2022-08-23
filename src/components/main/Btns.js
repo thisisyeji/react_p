@@ -5,7 +5,7 @@ function Btns() {
 	const pos = useRef([]);
 	const btnRef = useRef(null);
 	const speed = 500;
-	const num = 4;
+	const num = 5;
 
 	// 세로 스크롤 위치값 구하는 함수
 	const getPos = () => {

@@ -6,7 +6,6 @@ function Visual() {
 				muted
 				loop
 				autoPlay></video>
-			<h2>DISCOVER</h2>
 		</figure>
 	);
 }
