@@ -1,27 +1,12 @@
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
-import { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
+import { useState, useRef } from 'react';
+import { useSelector } from 'react-redux';
 
 function Youtube() {
-	const [Vids, setVids] = useState([]);
 	const [Index, setIndex] = useState(0);
-
 	const pop = useRef(null);
-
-	const getYotube = async () => {
-		const key = 'AIzaSyD1ZRgZNZXs590CNC6IbqqDi5RFFZNf1VM';
-		const playlist = 'PL4lFp_wxDge9JYZdXJgroiHplCVIIJ9vq';
-		const num = 6;
-		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlist}&maxResults=${num}`;
-
-		await axios.get(url).then((json) => {
-			// console.log(json.data.items);
-			setVids(json.data.items);
-		});
-	};
-
-	useEffect(getYotube, []);
+	const Vids = useSelector((store) => store.youtubeReducer.youtube);
 
 	return (
 		<>

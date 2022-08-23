@@ -1,21 +1,13 @@
 import Layout from '../common/Layout';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 function About() {
-	const [Members, setMembers] = useState([]);
 	const path = process.env.PUBLIC_URL;
-
-	useEffect(() => {
-		axios.get(path + '/DB/members.json').then((json) => {
-			// console.log(json.data.members);
-			setMembers(json.data.members);
-		});
-	}, []);
+	const Members = useSelector((store) => store.memberReducer.members);
 
 	return (
 		<Layout name={'About'}>

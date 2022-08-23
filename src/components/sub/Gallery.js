@@ -1,60 +1,34 @@
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
-import axios from 'axios';
 import Masonry from 'react-masonry-component';
-import { useState, useEffect, useRef } from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
+import { useEffect, useState, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import * as types from '../../redux/actionType';
+
 function Gallery() {
-	const [Items, setItems] = useState([]);
+	const dispatch = useDispatch();
+
+	//store에 있는 flickr데이터를 가져옴 (처음 사이클에서는 빈배열  가져옴)
+	const Pics = useSelector((store) => store.flickrReducer.flickr);
+	// console.log(Pics);
+
 	const [EnableClick, setEnableClick] = useState(false);
 	const [Index, setIndex] = useState(0);
+	const [Loading, setLoading] = useState(true);
 	const frame = useRef(null);
 	const btnBox = useRef(null);
 	const input = useRef(null);
 	const pop = useRef(null);
 
-	const [Loading, setLoading] = useState(true);
-
 	//masonry 전환속도 옵션객체 설정
 	const masonryOptions = { transitionDuration: '0.7s' };
+	const user = '196138805@N05';
 
-	const num = 150;
-	const id = '196138805@N05';
-
-	const getFlickr = async (opt) => {
-		const key = 'ca6bb9623cb117b2c44bd339126530e9';
-		const method_gallery = 'flickr.galleries.getPhotos';
-		const method_interest = 'flickr.interestingness.getList';
-		const method_user = 'flickr.people.getPhotos';
-		const method_search = 'flickr.photos.search';
-
-		const gallery_id = '72157721034367990';
-		let url = '';
-
-		if (opt.type === 'gallery')
-			url = `https://www.flickr.com/services/rest/?method=${method_gallery}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&gallery_id=${gallery_id}`;
-		if (opt.type === 'interest')
-			url = `https://www.flickr.com/services/rest/?method=${method_interest}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1`;
-		if (opt.type === 'user')
-			url = `https://www.flickr.com/services/rest/?method=${method_user}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&user_id=${id}`;
-		if (opt.type === 'search')
-			url = `https://www.flickr.com/services/rest/?method=${method_search}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&tags=${opt.tag}`;
-
-		await axios.get(url).then((json) => {
-			// console.log(json.data.photos.photo);
-			if (json.data.photos.photo.length === 0)
-				return alert('There are no results found.');
-			setItems(json.data.photos.photo);
-		});
-		setTimeout(() => {
-			frame.current.classList.add('on');
-			setLoading(false);
-			setEnableClick(true);
-		}, 1000);
-	};
+	//saga로 전달될 axios호출시 필요한 옵션값이 담길 state
+	const [Opt, setOpt] = useState({ type: 'gallery' });
 
 	const btnHandle = (index) => {
 		const btns = btnBox.current.querySelectorAll('button');
@@ -70,8 +44,8 @@ function Gallery() {
 		if (!EnableClick) return;
 		setLoading(true);
 		frame.current.classList.remove('on');
-		getFlickr({ type: 'search', tag: result });
-		setEnableClick(true);
+		setOpt({ type: 'search', tag: result });
+		setEnableClick(false);
 		setTimeout(() => {
 			input.current.value = '';
 		}, 2000);
@@ -82,8 +56,8 @@ function Gallery() {
 		setLoading(true);
 		btnHandle(0);
 		frame.current.classList.remove('on');
-		getFlickr({ type: 'gallery' });
-		setEnableClick(true);
+		setOpt({ type: 'gallery' });
+		setEnableClick(false);
 	};
 
 	const showUser = () => {
@@ -91,8 +65,8 @@ function Gallery() {
 		setLoading(true);
 		btnHandle(1);
 		frame.current.classList.remove('on');
-		getFlickr({ type: 'user' });
-		setEnableClick(true);
+		setOpt({ type: 'user' });
+		setEnableClick(false);
 	};
 
 	const showInterest = () => {
@@ -100,11 +74,25 @@ function Gallery() {
 		setLoading(true);
 		btnHandle(2);
 		frame.current.classList.remove('on');
-		getFlickr({ type: 'interest' });
-		setEnableClick(true);
+		setOpt({ type: 'interest' });
+		setEnableClick(false);
 	};
 
-	useEffect(() => getFlickr({ type: 'gallery' }), []);
+	const endLoading = () => {
+		setTimeout(() => {
+			frame.current.classList.add('on');
+			setLoading(false);
+			setTimeout(() => setEnableClick(true), 600);
+		}, 1000);
+	};
+
+	//Opt값이 변경될떄마다 dispatch로 변경된 해당 Opt값을 Flickr_start액션객체에 담아서 saga에 전달
+	useEffect(() => {
+		dispatch({ type: types.FLICKR.start, Opt });
+	}, [Opt]);
+
+	//flickr데이터가 변경될때마다 (새로운데이터 요청을 해서 해당 요청이 완료될때마다) 로딩제거함수 호출
+	useEffect(endLoading, [Pics]);
 
 	return (
 		<>
@@ -141,7 +129,7 @@ function Gallery() {
 				)}
 				<div className='frame' ref={frame}>
 					<Masonry elementType='div' options={masonryOptions}>
-						{Items.map((pic, idx) => {
+						{Pics.map((pic, idx) => {
 							return (
 								<article key={idx}>
 									<div className='pic_inner'>
@@ -171,10 +159,10 @@ function Gallery() {
 			</Layout>
 
 			<Popup ref={pop}>
-				{Items.length !== 0 && (
+				{Pics.length !== 0 && (
 					<img
-						src={`https://live.staticflickr.com/${Items[Index].server}/${Items[Index].id}_${Items[Index].secret}_b.jpg`}
-						alt={Items[Index].title}
+						src={`https://live.staticflickr.com/${Pics[Index].server}/${Pics[Index].id}_${Pics[Index].secret}_b.jpg`}
+						alt={Pics[Index].title}
 					/>
 				)}
 			</Popup>

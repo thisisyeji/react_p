@@ -1,4 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import * as types from './redux/actionType';
 
 // common
 import Header from './components/common/Header';
@@ -18,6 +21,13 @@ import Youtube from './components/sub/Youtube';
 import './scss/style.scss';
 
 function App() {
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch({ type: types.YOUTUBE.start });
+		dispatch({ type: types.MEMBERS.start });
+	}, []);
+
 	return (
 		<>
 			<Switch>
