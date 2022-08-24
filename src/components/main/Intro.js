@@ -13,12 +13,12 @@ function Intro() {
 						</div>
 					</div>
 					<div className='title_second'>
-						<div className='img_second'>
+						<div className='img'>
 							<img src={path + '/img/3.jpg'} />
 						</div>
-						AMAZING SCENT
+						THE NEW
 					</div>
-					AROUND THE WORLD
+					<span className='title_last'>AMAZING FRAGRANCE</span>
 				</h2>
 				<div className='btn'>Explore</div>
 			</div>

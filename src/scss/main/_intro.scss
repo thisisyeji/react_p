@@ -24,12 +24,16 @@
 				justify-content: flex-start;
 				align-items: center;
 				gap: 30px;
+				transform: translateX(-80px);
+				opacity: 0;
+				transition: 1s;
 
 				.img {
 					width: 40%;
-					height: 100px;
 					border-radius: 100px;
-					height: 13vh;
+					height: 17vh;
+					opacity: 0;
+					transition: 1s 1s;
 
 					img {
 						width: 100%;
@@ -43,20 +47,22 @@
 
 			.title_second {
 				width: 100%;
-				font-style: italic;
-				color: $bg;
-				text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
 
 				position: relative;
 				display: flex;
-				justify-content: center;
+				justify-content: flex-start;
 				align-items: center;
 				gap: 30px;
+				transform: translateX(80px);
+				opacity: 0;
+				transition: 1s 0.2s;
 
-				.img_second {
-					width: 25%;
-					height: 13vh;
+				.img {
+					width: 40%;
 					border-radius: 100px;
+					height: 17vh;
+					opacity: 0;
+					transition: 1s 1s;
 
 					img {
 						width: 100%;
@@ -66,34 +72,50 @@
 						filter: grayscale(1);
 					}
 				}
+			}
+
+			.title_last {
+				display: inline-block;
+				font-style: italic;
+				color: $bg;
+				text-shadow: -3px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
+				transform: translateY(50px);
+				opacity: 0;
+				transition: 1s 0.5s;
 
 				&::after {
 					content: '';
 					display: block;
-					width: 65%;
+					width: 100%;
 					height: 20px;
 					background: $orange;
 					position: absolute;
 					bottom: 20%;
-					right: 4%;
+					opacity: 0;
+					transition: 1s 1s;
+					left: 0;
 					z-index: -1;
 				}
 			}
 		}
 
 		.btn {
-			width: 154px;
-			height: 70px;
-			font-size: 28px;
+			width: 12vw;
+			height: 6vw;
+			font-size: 2.5vw;
 			font-weight: 500;
 			position: absolute;
 			color: $orange;
 			background: #fff;
-			bottom: 50px;
+			bottom: 5vw;
 			right: 10vw;
+			padding-left: 5px;
 			border: 2px solid $orange;
 			border-radius: 50%;
-			transform: rotate(-15deg);
+			cursor: pointer;
+			transform: rotate(45deg) translateX(50px);
+			opacity: 0;
+			transition: 1s 0.5s;
 
 			display: flex;
 			justify-content: center;
@@ -102,14 +124,52 @@
 			&::after {
 				content: '';
 				display: block;
-				width: 150px;
-				height: 70px;
+				width: 100%;
+				height: 100%;
 				border: 2px solid $orange;
 				border-radius: 50%;
 
 				position: absolute;
-				bottom: 1px;
+				bottom: 3px;
 				right: -10px;
+			}
+		}
+	}
+
+	&.on {
+		.inner {
+			h2 {
+				.title_first {
+					transform: translateX(0);
+					opacity: 1;
+
+					.img {
+						opacity: 1;
+					}
+				}
+
+				.title_second {
+					transform: translateX(0);
+					opacity: 1;
+
+					.img {
+						opacity: 1;
+					}
+				}
+
+				.title_last {
+					transform: translateY(0);
+					opacity: 1;
+
+					&::after {
+						opacity: 1;
+					}
+				}
+			}
+
+			.btn {
+				transform: rotate(-25deg) translateX(0);
+				opacity: 1;
 			}
 		}
 	}
