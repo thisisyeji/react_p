@@ -1,6 +1,7 @@
 #Intro {
 	width: 100%;
 	height: calc(100vh - 50px);
+	margin-bottom: 100px;
 
 	.inner {
 		width: 100%;
@@ -35,12 +36,19 @@
 					opacity: 0;
 					transition: 1s 1s;
 
+					&:hover {
+						img {
+							filter: grayscale(0);
+						}
+					}
+
 					img {
 						width: 100%;
 						height: 100%;
 						object-fit: cover;
 						border-radius: 100px;
 						filter: grayscale(1);
+						transition: 1s;
 					}
 				}
 			}
@@ -64,12 +72,19 @@
 					opacity: 0;
 					transition: 1s 1s;
 
+					&:hover {
+						img {
+							filter: grayscale(0);
+						}
+					}
+
 					img {
 						width: 100%;
 						height: 100%;
 						object-fit: cover;
 						border-radius: 100px;
 						filter: grayscale(1);
+						transition: 1s;
 					}
 				}
 			}
@@ -100,14 +115,14 @@
 		}
 
 		.btn {
-			width: 12vw;
+			width: 12.3vw;
 			height: 6vw;
 			font-size: 2.5vw;
 			font-weight: 500;
 			position: absolute;
 			color: $orange;
 			background: #fff;
-			bottom: 5vw;
+			bottom: 6vw;
 			right: 10vw;
 			padding-left: 5px;
 			border: 2px solid $orange;
@@ -116,10 +131,23 @@
 			transform: rotate(180deg) translateX(50px);
 			opacity: 0;
 			transition: 1s 0.5s;
+			animation: blink 2s infinite;
 
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
+			@keyframes blink {
+				0% {
+					opacity: 1;
+				}
+				60% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
 
 			&::after {
 				content: '';
@@ -131,7 +159,7 @@
 
 				position: absolute;
 				bottom: 3px;
-				right: -10px;
+				right: -6px;
 			}
 		}
 	}
