@@ -17,7 +17,7 @@ function Btns() {
 	// 스크롤시 버튼 활성화
 	const activation = () => {
 		// 변수 base로 버튼 활성화 지점 커스터마이징
-		const base = -window.innerHeight / 4;
+		const base = -window.innerHeight / 2;
 
 		const scroll = window.scrollY;
 		const btns = btnRef.current.children;
