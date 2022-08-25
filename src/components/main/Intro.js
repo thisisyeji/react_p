@@ -31,6 +31,7 @@ function Intro() {
 					</div>
 					<span className='title_last'>AMAZING FRAGRANCE</span>
 				</h2>
+
 				<div
 					className='btn'
 					onClick={() => {

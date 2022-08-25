@@ -47,13 +47,13 @@ function New() {
 	return (
 		<section id='New' className='myScroll'>
 			<div className='inner'>
-				<h1>New Posts</h1>
+				<h2>New Posts</h2>
 				<div className='posts'>
 					{Posts.map((post, idx) => {
 						if (idx >= 4) return;
 						return (
 							<article key={idx}>
-								<h2>{post.title}</h2>
+								<h3>{post.title}</h3>
 								<p>{post.content}</p>
 							</article>
 						);
