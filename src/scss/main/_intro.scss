@@ -131,7 +131,8 @@
 			transform: rotate(180deg) translateX(50px);
 			opacity: 0;
 			transition: 1s 0.5s;
-			animation: blink 2s infinite;
+			animation: blink 1.5s infinite forwards;
+			animation-delay: 2s;
 
 			display: flex;
 			justify-content: center;
@@ -139,14 +140,18 @@
 
 			@keyframes blink {
 				0% {
-					opacity: 1;
+					bottom: 3vw;
 				}
 				60% {
-					opacity: 0;
+					bottom: 6vw;
 				}
 				100% {
-					opacity: 1;
+					bottom: 3vw;
 				}
+			}
+
+			&:hover {
+				animation-play-state: paused;
 			}
 
 			&::after {
