@@ -46,16 +46,20 @@ function New() {
 
 	return (
 		<section id='New' className='myScroll'>
-			<h1>New</h1>
-			{Posts.map((post, idx) => {
-				if (idx >= 4) return;
-				return (
-					<article key={idx}>
-						<h2>{post.title}</h2>
-						<p>{post.content}</p>
-					</article>
-				);
-			})}
+			<div className='inner'>
+				<h1>New Posts</h1>
+				<div className='posts'>
+					{Posts.map((post, idx) => {
+						if (idx >= 4) return;
+						return (
+							<article key={idx}>
+								<h2>{post.title}</h2>
+								<p>{post.content}</p>
+							</article>
+						);
+					})}
+				</div>
+			</div>
 		</section>
 	);
 }
