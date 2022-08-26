@@ -17,20 +17,16 @@ function Intro() {
 		<section id='Intro' className='myScroll' ref={boxRef}>
 			<div className='inner'>
 				<h2>
-					<div className='title_first'>
-						DISCOVER
-						<div className='img'>
-							<img src={path + '/img/1.jpg'} />
-						</div>
-					</div>
-					<div className='title_second'>
-						<div className='img'>
-							<img src={path + '/img/3.jpg'} />
-						</div>
-						THE NEW
-					</div>
+					<span className='title_first'>DISCOVER</span>
+					<span className='title_second'>THE NEW</span>
 					<span className='title_last'>AMAZING FRAGRANCE</span>
 				</h2>
+				<div className='img_first'>
+					<img src={path + '/img/1.jpg'} />
+				</div>
+				<div className='img_second'>
+					<img src={path + '/img/3.jpg'} />
+				</div>
 
 				<div
 					className='btn'
