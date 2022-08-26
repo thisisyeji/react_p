@@ -1,7 +1,12 @@
 #Visual {
-	width: 100%;
+	width: calc(100% - 50px);
 	height: 100vh;
 	overflow-x: hidden;
+	overflow-y: hidden;
+	background-color: #222;
+
+	display: flex;
+	align-items: center;
 
 	&.on {
 		video {
@@ -12,13 +17,11 @@
 
 	video {
 		width: 100%;
-		height: 100%;
 		object-fit: cover;
 		opacity: 0;
 		transform: scale(0);
 		transition: 1s;
 
 		position: relative;
-		z-index: 6;
 	}
 }
