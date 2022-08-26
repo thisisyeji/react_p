@@ -7,6 +7,8 @@
 	&.on {
 		.inner {
 			h2 {
+				text-shadow: -10px 0 $orange, 0 1px $orange, 1px 0 $orange,
+					0 -1px $orange;
 				transform: translateY(0);
 				opacity: 1;
 			}
@@ -31,10 +33,9 @@
 			width: 30%;
 			font-size: 100px;
 			color: $bg;
-			text-shadow: -10px 0 $orange, 0 1px $orange, 1px 0 $orange, 0 -1px $orange;
 			transform: translateY(50px);
 			opacity: 0;
-			transition: 1s;
+			transition: all 1s;
 		}
 
 		.posts {

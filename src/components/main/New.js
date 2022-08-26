@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function New() {
 	// 로컬스토리지에 있는 데이터 가져오기
