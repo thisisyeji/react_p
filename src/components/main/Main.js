@@ -12,8 +12,8 @@ function Main() {
 			<Header type={'main'} />
 			<Intro />
 			<Visual />
-			<Vids />
 			<Pics />
+			<Vids />
 			<New />
 			<Btns />
 		</main>

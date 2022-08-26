@@ -1,33 +1,76 @@
 #Vids {
 	width: 100%;
 	height: 100vh;
-	border-top: 1px solid #777;
-	overflow-x: hidden;
+	margin-top: 200px;
+
+	position: relative;
 
 	.swiper {
 		height: 100%;
-		padding: 10vw 0px;
+		padding: 5vw;
 
 		.swiper-slide {
-			width: 100%;
-
-			.swipe_inner {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.inner {
 				width: 100%;
-				height: 100%;
-				background-color: #555;
-				color: #fff;
-				font-size: 30px;
-
-				display: flex;
-				justify-content: center;
-				align-items: center;
 				opacity: 0.5;
+				transform: scale(0.8);
+
+				.pic {
+					width: 100%;
+					padding: 10px;
+
+					img {
+						width: 100%;
+						height: 100%;
+						border-radius: 50%;
+					}
+				}
+
+				h3 {
+					text-align: center;
+				}
+			}
+		}
+
+		.swiper-button-prev {
+			position: absolute;
+			left: 5vw;
+			z-index: 3;
+			color: $orange;
+			transform: scale(0.7);
+		}
+
+		.swiper-button-next {
+			position: absolute;
+			right: 5vw;
+			z-index: 3;
+			color: $orange;
+			transform: scale(0.7);
+		}
+
+		.swiper-slide-prev {
+			.inner {
+				h3 {
+					display: none;
+				}
+			}
+		}
+
+		.swiper-slide-next {
+			.inner {
+				h3 {
+					display: none;
+				}
 			}
 		}
 
 		.swiper-slide-active {
-			.swipe_inner {
+			.inner {
 				opacity: 1;
+				transform: scale(1.2);
 			}
 		}
 	}

@@ -28,7 +28,6 @@ function Vids() {
 				// 1번 슬라이드를 센터로
 				centeredSlides={true}>
 				{Videos.map((data, idx) => {
-					if (idx >= 4) return;
 					return (
 						<SwiperSlide key={data.id}>
 							<div className='inner'>
