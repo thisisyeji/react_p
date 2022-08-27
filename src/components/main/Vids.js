@@ -10,15 +10,24 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-function Vids() {
+function Vids({ Scrolled, currentPos }) {
 	const Videos = useSelector((store) => store.youtubeReducer.youtube);
+
+	const position = Scrolled - currentPos || 0;
 
 	return (
 		<section id='Vids' className='myScroll'>
+			<div className='banner'>
+				<span style={{ marginLeft: position * -3 }}>
+					Acqua di Parma, a symbol of Italian savoir-faire and refinement,
+				</span>
+			</div>
 			<Swiper
 				modules={[Pagination, Navigation, Autoplay]}
-				pagination={{ clickable: true }}
+				// pagination={{ clickable: true }}
 				navigation={true}
+				// 오토 플레이
+				autoplay={{ delay: 3000, disableOnInteraction: false }}
 				// 간격
 				spaceBetween={40}
 				// 순환
@@ -36,6 +45,7 @@ function Vids() {
 										src={data.snippet.thumbnails.maxres.url}
 										alt={data.snippet.title}
 									/>
+									<div className='cover'>VIEW</div>
 								</div>
 								<h3>{data.snippet.title}</h3>
 							</div>
@@ -43,6 +53,12 @@ function Vids() {
 					);
 				})}
 			</Swiper>
+			<div className='banner'>
+				<span style={{ marginLeft: position * 1 }} className='banner_bottom'>
+					embodies discreet luxury through its elegant fragrances and lifestyle
+					products.
+				</span>
+			</div>
 		</section>
 	);
 }
