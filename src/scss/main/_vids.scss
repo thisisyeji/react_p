@@ -45,7 +45,6 @@
 				.pic {
 					width: 100%;
 					padding: 10px;
-					cursor: pointer;
 					position: relative;
 
 					img {
@@ -109,6 +108,7 @@
 				transform: scale(1.2);
 
 				.pic {
+					cursor: pointer;
 					&:hover {
 						.cover {
 							opacity: 1;
