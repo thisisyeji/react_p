@@ -1,10 +1,25 @@
 #Pics {
 	width: calc(100% - 50px);
 	height: 100%;
-	margin-top: 200px;
+	margin-top: 300px;
 	padding: 0 5vw;
 
 	position: relative;
+
+	&.on {
+		h2 {
+			span {
+				opacity: 1;
+			}
+		}
+
+		.start {
+			.img {
+				opacity: 11;
+				transform: translateY(0);
+			}
+		}
+	}
 
 	h2 {
 		font-size: 9vw;
@@ -18,6 +33,8 @@
 			position: relative;
 			z-index: -1;
 			margin-bottom: 20px;
+			opacity: 0;
+			transition: 0.2s;
 
 			&:last-child {
 				color: #333;
@@ -25,6 +42,12 @@
 
 				position: relative;
 				z-index: 2;
+			}
+
+			@for $i from 1 through 3 {
+				&:nth-of-type(#{$i}) {
+					transition-delay: 0.2s * $i - 0.2s;
+				}
 			}
 		}
 	}
@@ -35,26 +58,45 @@
 		justify-content: center;
 		align-items: center;
 
-		margin-bottom: 100px;
+		margin-bottom: 150px;
+
 		.img {
 			width: 40vw;
+			margin-bottom: 50px;
+			opacity: 0;
+			transform: translateY(100px);
+			transition: 0.5s 0.4s;
 
 			img {
 				width: 100%;
 				height: 100%;
 			}
 		}
+
+		p {
+			font: 100 24px/1.5 'Bodoni Moda';
+			color: #555;
+			text-align: center;
+			font-style: italic;
+			padding: 0 20vw;
+		}
 	}
 
 	.product {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
+		margin-bottom: 50px;
+		padding: 0 5vw;
 
 		.img {
 			width: 50%;
+
+			display: flex;
+			justify-content: center;
 			img {
-				width: 90%;
+				width: 80%;
 				border-top-left-radius: 50%;
 				border-top-right-radius: 50%;
 			}
@@ -62,6 +104,45 @@
 
 		.detail {
 			width: 50%;
+			margin-top: 50px;
+			position: relative;
+
+			h3 {
+				font-size: 50px;
+				font-weight: 100;
+				color: $orange;
+				margin-bottom: 20px;
+			}
+
+			p {
+				color: #333;
+				margin-bottom: 20px;
+			}
+
+			button {
+				border: 1px solid $orange;
+				background: $bg;
+				padding: 20px 50px;
+				border-radius: 50%;
+				cursor: pointer;
+
+				position: absolute;
+				right: 0;
+
+				a {
+					color: #333;
+				}
+			}
+		}
+	}
+
+	.home {
+		.img {
+			order: 2;
+		}
+
+		.detail {
+			order: 1;
 		}
 	}
 }

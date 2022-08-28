@@ -13,7 +13,6 @@ function Pics() {
 					<img src={path + '/img/f1.jpg'} />
 				</div>
 
-				<h3>MEET OUR NEW NEW MAGNOLIA INFINITA</h3>
 				<p>
 					Signatures of the Sun welcomes the new Magnolia Infinita, a continuous
 					blossoming of wonders that never ceases to amaze
@@ -22,7 +21,7 @@ function Pics() {
 
 			<div className='product fragrance'>
 				<div className='img'>
-					<img src={path + '/img/f.jpg'} />
+					<img src={path + '/img/f2.jpg'} />
 				</div>
 				<div className='detail'>
 					<h3>NATURAL SPRAY</h3>
@@ -34,7 +33,44 @@ function Pics() {
 						Lemon to introduce vivid rays of light to the fascinating and fresh
 						appeal of the Magnolia flower.
 					</p>
-					<button>MORE</button>
+					<button>
+						<a href='#'>MORE</a>
+					</button>
+				</div>
+			</div>
+
+			<div className='product home'>
+				<div className='img'>
+					<img src={path + '/img/home.jpg'} />
+				</div>
+				<div className='detail'>
+					<h3>HOME COLLECTION</h3>
+					<p>
+						A collection of five unique sculptures represents the Signatures of
+						the Sun ingredients in tangible forms, bringing to life the art of
+						sophisticated home scenting.
+					</p>
+					<button>
+						<a href='#'>MORE</a>
+					</button>
+				</div>
+			</div>
+
+			<div className='product fragrance'>
+				<div className='img'>
+					<img src={path + '/img/body2.jpg'} />
+				</div>
+				<div className='detail'>
+					<h3>BODY CARE</h3>
+					<p>
+						Infused with the flavours of Signatures of the Sun, Acqua di Parma
+						has reimagined a new body-care routine that not only leaves a softly
+						perfumed trail, but nourishes your emotional senses and cares deeply
+						for your skin
+					</p>
+					<button>
+						<a href='#'>MORE</a>
+					</button>
 				</div>
 			</div>
 		</section>

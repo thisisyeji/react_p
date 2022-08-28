@@ -22,7 +22,7 @@ function Intro() {
 					<span className='title_last'>AMAZING FRAGRANCE</span>
 				</h2>
 				<div className='img_first'>
-					<img src={path + '/img/1.jpg'} />
+					<img src={path + '/img/intro.jpg'} />
 				</div>
 				<div className='img_second'>
 					<img src={path + '/img/3.jpg'} />
