@@ -1,5 +1,5 @@
 #Intro {
-	width: 100%;
+	width: calc(100% - 50px);
 	height: calc(100vh - 50px);
 	margin-bottom: 100px;
 	overflow-x: hidden;
@@ -111,11 +111,12 @@
 			font-family: 'Bodoni Moda', serif;
 			font-size: 2.2vw;
 			font-weight: 500;
-			position: absolute;
 			color: $orange;
 			background: #fff;
+			position: absolute;
 			bottom: 6vw;
 			right: 10vw;
+			z-index: 2;
 			padding-left: 5px;
 			border: 2px solid $orange;
 			border-radius: 50%;
@@ -187,6 +188,163 @@
 			.btn {
 				transform: rotate(-25deg) translateX(0);
 				opacity: 1;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $desktop) {
+	#Intro {
+		.inner {
+			h2 {
+				bottom: 15vw;
+
+				.title_first {
+					margin-bottom: 50px;
+				}
+
+				.title_second {
+					margin-bottom: 50px;
+				}
+			}
+
+			.img_first {
+				bottom: 47vw;
+			}
+
+			.img_second {
+				bottom: 29vw;
+			}
+
+			.btn {
+				border: 1px solid $orange;
+
+				&::after {
+					border: 1px solid $orange;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	#Intro {
+		width: 100%;
+		height: 100vh;
+
+		.inner {
+			padding: 50px 5vw 0;
+			h2 {
+				width: 90%;
+				font-size: 10vw;
+				font-weight: 700;
+				color: #333;
+
+				position: relative;
+				top: 20%;
+
+				.title_second {
+					padding-right: 0;
+					margin-bottom: 30px;
+				}
+
+				.title_last {
+					&::after {
+						content: '';
+						display: block;
+						width: 80%;
+						height: 20px;
+						background: $orange;
+						position: absolute;
+						bottom: 10%;
+						opacity: 0;
+						transition: 1s 1s;
+						left: 0;
+						z-index: -1;
+					}
+				}
+			}
+
+			.img_first {
+				top: 20%;
+				z-index: -1;
+			}
+
+			.img_second {
+				top: 40%;
+				z-index: -1;
+			}
+
+			.btn {
+				width: 100px;
+				height: 50px;
+				font-size: 18px;
+				bottom: 20%;
+
+				@keyframes blink {
+					0% {
+						bottom: 20%;
+					}
+					60% {
+						bottom: 18%;
+					}
+					100% {
+						bottom: 20%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	#Intro {
+		width: 100%;
+		height: 75vh;
+		margin-bottom: 50px;
+
+		.inner {
+			h2 {
+				width: 90%;
+				font-size: 10vw;
+				top: 13%;
+
+				.title_first {
+					margin-top: 20px;
+					margin-bottom: 40px;
+				}
+
+				.title_second {
+					margin-top: 20px;
+					margin-bottom: 40px;
+				}
+
+				.title_last {
+					font-size: 12vw;
+					&::after {
+						width: 90%;
+					}
+				}
+			}
+
+			.btn {
+				width: 90px;
+				height: 45px;
+				font-size: 16px;
+				bottom: 10%;
+				right: 10px;
+
+				@keyframes blink {
+					0% {
+						bottom: 10%;
+					}
+					60% {
+						bottom: 8%;
+					}
+					100% {
+						bottom: 10%;
+					}
+				}
 			}
 		}
 	}
