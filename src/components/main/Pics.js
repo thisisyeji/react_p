@@ -1,7 +1,54 @@
+import Anime from '../../assets/Anime';
+import { useEffect, useRef } from 'react';
+
 function Pics() {
 	const path = process.env.PUBLIC_URL;
+
+	const pos = useRef([]);
+	const box = useRef([]);
+
+	const getPos = () => {
+		pos.current = [];
+		const divs = box.current.querySelectorAll('.product');
+		for (const div of divs) {
+			pos.current.push(div.getBoundingClientRect().top + window.pageYOffset); // 절대값 구하기
+		}
+		console.log(pos.current);
+	};
+
+	const activation = () => {
+		const base = -window.innerHeight / 3;
+		const scroll = window.scrollY;
+		const divs = box.current.querySelectorAll('.product');
+		pos.current.map((pos, idx) => {
+			if (scroll >= pos + base) {
+				for (const div of divs) div.classList.remove('on');
+				divs[idx].classList.add('on');
+
+				// console.log(scroll);
+				// console.log(pos + base);
+			}
+		});
+	};
+
+	useEffect(() => {
+		const divs = box.current.querySelectorAll('.product');
+		for (const div of divs) div.classList.remove('on');
+
+		getPos();
+
+		window.addEventListener('resize', getPos);
+		window.addEventListener('scroll', activation);
+
+		// 함수 삭제
+		return () => {
+			window.removeEventListener('resize', getPos);
+			window.removeEventListener('scroll', activation);
+		};
+	}, []);
+
 	return (
-		<section id='Pics' className='myScroll'>
+		<section id='Pics' className='myScroll' ref={box}>
 			<h2>
 				<span>MAGNOLIA INFINITA</span>
 				<span>MAGNOLIA INFINITA</span>
@@ -56,7 +103,7 @@ function Pics() {
 				</div>
 			</div>
 
-			<div className='product fragrance'>
+			<div className='product body'>
 				<div className='img'>
 					<img src={path + '/img/body2.jpg'} />
 				</div>

@@ -58,7 +58,7 @@
 		justify-content: center;
 		align-items: center;
 
-		margin-bottom: 150px;
+		margin-bottom: 100px;
 
 		.img {
 			width: 40vw;
@@ -87,8 +87,37 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
-		margin-bottom: 50px;
-		padding: 0 5vw;
+		padding: 5vw;
+		transform: translateX(-100px);
+		transition: 0.5s;
+		opacity: 0;
+
+		&.home {
+			transform: translateX(100px);
+			margin: 50px 0;
+		}
+
+		&.on {
+			transform: translateX(0);
+			opacity: 1;
+
+			.detail {
+				h3 {
+					opacity: 1;
+					transform: translateX(0);
+				}
+
+				p {
+					opacity: 1;
+					transform: translateX(0);
+				}
+
+				button {
+					opacity: 1;
+					transform: translateX(0);
+				}
+			}
+		}
 
 		.img {
 			width: 50%;
@@ -112,11 +141,17 @@
 				font-weight: 100;
 				color: $orange;
 				margin-bottom: 20px;
+				opacity: 0;
+				transform: translateX(20px);
+				transition: 0.5s 0.2s;
 			}
 
 			p {
 				color: #333;
 				margin-bottom: 20px;
+				opacity: 0;
+				transform: translateX(20px);
+				transition: 0.5s 0.4s;
 			}
 
 			button {
@@ -125,6 +160,9 @@
 				padding: 20px 50px;
 				border-radius: 50%;
 				cursor: pointer;
+				opacity: 0;
+				transform: translateX(20px);
+				transition: 0.5s 0.6s;
 
 				position: absolute;
 				right: 0;
