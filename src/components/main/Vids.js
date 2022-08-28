@@ -24,7 +24,7 @@ function Vids({ Scrolled, currentPos }) {
 			<section id='Vids' className='myScroll'>
 				<h2 className='hidden'>Youtube</h2>
 				<div className='banner'>
-					<span style={{ marginLeft: position * -2 }}>
+					<span style={{ marginLeft: -position }}>
 						Acqua di Parma, a symbol of Italian savoir-faire and refinement,
 					</span>
 				</div>
@@ -67,7 +67,7 @@ function Vids({ Scrolled, currentPos }) {
 					})}
 				</Swiper>
 				<div className='banner'>
-					<span style={{ marginLeft: position * 2 }} className='banner_bottom'>
+					<span style={{ marginLeft: position }} className='banner_bottom'>
 						embodies discreet luxury through its elegant fragrances and
 						lifestyle products.
 					</span>
