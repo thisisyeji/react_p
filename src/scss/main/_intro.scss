@@ -75,18 +75,11 @@
 			bottom: 29vw;
 			left: 45%;
 
-			&:hover {
-				img {
-					filter: grayscale(0);
-				}
-			}
-
 			img {
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
 				border-radius: 100px;
-				filter: grayscale(1);
 				transition: 1s;
 			}
 		}
@@ -103,18 +96,11 @@
 			bottom: 17vw;
 			left: 0;
 
-			&:hover {
-				img {
-					filter: grayscale(0);
-				}
-			}
-
 			img {
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
 				border-radius: 100px;
-				filter: grayscale(1);
 				transition: 1s;
 			}
 		}
