@@ -13,7 +13,7 @@ function Pics() {
 		for (const div of divs) {
 			pos.current.push(div.getBoundingClientRect().top + window.pageYOffset); // 절대값 구하기
 		}
-		console.log(pos.current);
+		// console.log(pos.current);
 	};
 
 	const activation = () => {
