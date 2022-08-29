@@ -230,7 +230,7 @@
 @media screen and (max-width: $tablet) {
 	#Intro {
 		width: 100%;
-		height: 100%;
+		height: 100vh;
 		.inner {
 			padding: 50px 5vw 0;
 			h2 {
@@ -258,7 +258,7 @@
 						bottom: 10%;
 						opacity: 0;
 						transition: 1s 1s;
-						left: 0;
+						left: -10px;
 						z-index: -1;
 					}
 				}
@@ -278,17 +278,17 @@
 				width: 100px;
 				height: 50px;
 				font-size: 18px;
-				bottom: 20%;
+				bottom: 15%;
 
 				@keyframes blink {
 					0% {
-						bottom: 20%;
+						bottom: 15%;
 					}
 					60% {
-						bottom: 18%;
+						bottom: 13%;
 					}
 					100% {
-						bottom: 20%;
+						bottom: 15%;
 					}
 				}
 			}
