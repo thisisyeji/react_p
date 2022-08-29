@@ -168,7 +168,6 @@
 @media screen and (max-width: $tablet) {
 	#Vids {
 		width: 100%;
-		margin-top: 100px;
 		.banner {
 			span {
 				width: 500%;
@@ -238,16 +237,6 @@
 			.swiper-button-next {
 				right: 2px;
 				transform: scale(0.6) translateY(-50%);
-			}
-
-			.swiper-slide-active {
-				.inner {
-					.pic {
-						.cover {
-							font-size: 20px;
-						}
-					}
-				}
 			}
 		}
 	}
