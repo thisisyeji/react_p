@@ -17,7 +17,7 @@ function Pics() {
 	};
 
 	const activation = () => {
-		const base = -window.innerHeight / 3;
+		const base = -window.innerHeight / 3.2;
 		const scroll = window.scrollY;
 		const divs = box.current.querySelectorAll('.product');
 		pos.current.map((pos, idx) => {
@@ -35,7 +35,7 @@ function Pics() {
 		const divs = box.current.querySelectorAll('.product');
 		for (const div of divs) div.classList.remove('on');
 
-		getPos();
+		setTimeout(getPos, 2000);
 
 		window.addEventListener('resize', getPos);
 		window.addEventListener('scroll', activation);
