@@ -33,15 +33,20 @@ function Vids({ Scrolled, currentPos }) {
 					// pagination={{ clickable: true }}
 					navigation={true}
 					// 오토 플레이
-					autoplay={{ delay: 3000, disableOnInteraction: false }}
+					autoplay={{ delay: 3000, disableOnInteraction: true }}
 					// 간격
-					spaceBetween={40}
+					spaceBetween={20}
 					// 순환
 					loop={true}
 					// 한번에 보여질 슬라이드 갯수
-					slidesPerView={3}
+					slidesPerView={1}
 					// 1번 슬라이드를 센터로
-					centeredSlides={true}>
+					centeredSlides={true}
+					breakpoints={{
+						540: {
+							slidesPerView: 3,
+						},
+					}}>
 					{Videos.map((data, idx) => {
 						return (
 							<SwiperSlide key={data.id}>

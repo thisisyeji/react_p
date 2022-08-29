@@ -5,10 +5,7 @@
 	margin-right: 50px;
 	position: relative;
 	transition: 0.5s;
-
-	&.on {
-		// background-color: #222;
-	}
+	overflow-x: hidden;
 
 	.banner {
 		width: 100%;
@@ -29,6 +26,7 @@
 	.swiper {
 		width: 100%;
 		height: 80vh;
+		padding: 0 10px;
 
 		position: relative;
 
@@ -36,15 +34,20 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			margin: 0;
+			// border: 1px solid #555;
+			transform: scale(0.8);
+
 			.inner {
 				width: 100%;
 				opacity: 0.5;
-				transform: scale(0.8);
 
 				.pic {
 					width: 100%;
-					padding: 10px;
+					height: 100%;
 					position: relative;
+					margin: 0 auto;
+					margin-bottom: 10px;
 
 					img {
 						width: 100%;
@@ -79,7 +82,7 @@
 		.swiper-button-next {
 			position: absolute;
 			top: 50%;
-			right: 3px;
+			right: 6px;
 			z-index: 3;
 			color: $orange;
 			transform: scale(0.7) translateY(-50%);
@@ -102,12 +105,14 @@
 		}
 
 		.swiper-slide-active {
+			transform: scale(1);
 			.inner {
 				opacity: 1;
-				transform: scale(1.2);
 
 				.pic {
 					cursor: pointer;
+					border-radius: 50%;
+
 					&:hover {
 						.cover {
 							opacity: 1;
@@ -117,11 +122,12 @@
 					img {
 						border: 2px solid $orange;
 						box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+						object-fit: cover;
 					}
 
 					.cover {
-						width: 96%;
-						height: 91%;
+						width: 100%;
+						height: calc(100% - 7px);
 						border-radius: 50%;
 						color: $orange;
 						font-size: 2vw;
@@ -134,8 +140,111 @@
 						align-items: center;
 
 						position: absolute;
-						top: 3%;
-						left: 2%;
+						top: 0;
+						left: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $desktop) {
+	#Vids {
+		.banner {
+			span {
+				width: 500%;
+				font-size: 10vw;
+			}
+		}
+
+		.swiper {
+			width: 100%;
+			height: 60vh;
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	#Vids {
+		width: 100%;
+		.banner {
+			span {
+				width: 500%;
+				font-size: 10vw;
+			}
+		}
+
+		.swiper {
+			width: 100%;
+			height: 50vh;
+
+			.swiper-slide {
+				.inner {
+					h3 {
+						font-size: 16px;
+					}
+				}
+			}
+
+			.swiper-button-prev {
+				left: 2px;
+				transform: scale(0.6) translateY(-50%);
+			}
+
+			.swiper-button-next {
+				right: 2px;
+				transform: scale(0.6) translateY(-50%);
+			}
+
+			.swiper-slide-active {
+				.inner {
+					.pic {
+						.cover {
+							font-size: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	#Vids {
+		width: 100%;
+		.banner {
+			span {
+				width: 400%;
+				font-size: 10vw;
+			}
+		}
+
+		.swiper-container {
+			width: 100%;
+		}
+
+		.swiper {
+			width: 100%;
+			height: 50vh;
+			padding: 20px 35px;
+
+			.swiper-button-prev {
+				left: 2px;
+				transform: scale(0.6) translateY(-50%);
+			}
+
+			.swiper-button-next {
+				right: 2px;
+				transform: scale(0.6) translateY(-50%);
+			}
+
+			.swiper-slide-active {
+				.inner {
+					.pic {
+						.cover {
+							font-size: 20px;
+						}
 					}
 				}
 			}
