@@ -105,7 +105,7 @@ function Pics() {
 
 			<div className='product body'>
 				<div className='img'>
-					<img src={path + '/img/body2.jpg'} />
+					<img src={path + '/img/body.jpg'} />
 				</div>
 				<div className='detail'>
 					<h3>BODY CARE</h3>
