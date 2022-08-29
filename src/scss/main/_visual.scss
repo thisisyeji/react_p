@@ -2,12 +2,13 @@
 	width: calc(100% - 50px);
 	height: 100vh;
 	overflow: hidden;
-	background-color: #222;
+	transition: 0.3s;
 
 	display: flex;
 	align-items: center;
 
 	&.on {
+		background-color: #222;
 		video {
 			opacity: 1;
 			transform: scale(1);
