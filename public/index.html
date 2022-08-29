@@ -24,27 +24,25 @@
       z-index: 5;
       opacity: 1;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       transition: opacity 2s color 0.5s;
 
     }
 
-    .mask p {
-      display: block;
+    .mask span {
       font-size: 4vw;
       font-family: 'Bodoni Moda', serif;
+      letter-spacing: 2px;
       font-style: italic;
       color: #fff;
     }
 
-    .mask i {
-      display: block;
+    .mask span i {
       color: rgb(255, 181, 0);
       font-size: 3vw;
-      margin-bottom: 20px;
-      animation: blink linear 0.5s infinite;
+      margin: 0 5px;
+      animation: blink linear 1s infinite;
     }
 
     @keyframes blink {
@@ -53,7 +51,7 @@
       }
 
       100% {
-        transform: rotateY(180deg);
+        transform: rotateY(360deg);
       }
     }
 
@@ -70,11 +68,9 @@
   <div id="root"></div>
   <div class="defaults"></div>
   <div class="mask">
-    <p>
-      L
-      <i class="fa-regular fa-face-smile"></i>
-      ading...
-    </p>
+    <span>
+      L<i class="fa-regular fa-face-smile"></i>ading...
+    </span>
   </div>
 
   <script>
@@ -111,18 +107,20 @@
     Promise.all([loadImg(), loadVid()]).then(result => {
       // console.log(result); //[true, true]
       const [loadedImg, loadedVid] = result;
-
-      //두함수의 반환값이 모두 true이면 (영상, 이미지가 모두 로딩완료되면)
-      if (loadedImg && loadedVid) {
-        console.log('mask-hide');
-        mask.classList.add('off');
-
-        setTimeout(() => {
-          mask.remove();
-          defaults.remove();
-        }, 2000)
-      }
+      /*
+            //두함수의 반환값이 모두 true이면 (영상, 이미지가 모두 로딩완료되면)
+            if (loadedImg && loadedVid) {
+              console.log('mask-hide');
+              mask.classList.add('off');
+      
+              setTimeout(() => {
+                mask.remove();
+                defaults.remove();
+              }, 2000)
+            }
+                */
     });
+
 
     // DOM 생성 함수
     function createDOM() {
