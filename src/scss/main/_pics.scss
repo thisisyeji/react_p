@@ -2,7 +2,6 @@
 	width: calc(100% - 50px);
 	height: 100%;
 	margin-top: 300px;
-	padding: 0 5vw;
 	overflow: hidden;
 
 	position: relative;
@@ -90,7 +89,7 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
-		padding: 5vw;
+		padding: 0 5vw;
 		transform: translateX(-100px);
 		transition: 1s;
 		opacity: 0;
@@ -227,8 +226,6 @@
 		}
 
 		.product {
-			padding: 0;
-
 			.detail {
 				h3 {
 					font-size: 5vw;
