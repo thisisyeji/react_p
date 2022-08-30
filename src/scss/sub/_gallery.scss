@@ -70,9 +70,17 @@
 				transition: 0.5s;
 				cursor: pointer;
 
+				svg {
+					color: #555;
+				}
+
 				&:hover {
 					color: $orange;
 					transform: rotate(405deg);
+
+					svg {
+						color: $orange;
+					}
 				}
 			}
 		}
