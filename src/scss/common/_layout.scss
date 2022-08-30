@@ -9,6 +9,11 @@
 		opacity: 0;
 		transition: 1.3s;
 
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -60,6 +65,7 @@
 		figure {
 			height: 400px;
 			padding: 0 5vw;
+			background-attachment: scroll;
 
 			h1 {
 				font-size: 90px;

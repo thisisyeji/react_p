@@ -11,10 +11,10 @@ function Layout({ name, children }) {
 			<figure
 				style={{
 					backgroundImage: `url(${process.env.PUBLIC_URL}/img/${name}.jpg)`,
-					backgroundAttachment: 'fixed',
-					backgroundPosition: 'center',
-					backgroundRepeat: 'no-repeat',
-					backgroundSize: 'cover',
+					// backgroundAttachment: 'fixed',
+					// backgroundPosition: 'center',
+					// backgroundRepeat: 'no-repeat',
+					// backgroundSize: 'cover',
 				}}>
 				<h1>{name}</h1>
 			</figure>
