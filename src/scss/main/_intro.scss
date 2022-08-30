@@ -118,7 +118,7 @@
 			background: #fff;
 			position: absolute;
 			bottom: 6vw;
-			right: 6vw;
+			right: 2vw;
 			z-index: 2;
 			padding-left: 5px;
 			border: 2px solid $orange;
@@ -196,7 +196,7 @@
 	}
 }
 
-@media screen and (max-width: $desktop) {
+@media screen and (max-width: $laptop) {
 	#Intro {
 		.inner {
 			h2 {
@@ -304,14 +304,14 @@
 @media screen and (max-width: $mobile) {
 	#Intro {
 		width: 100%;
-		height: 75vh;
 		margin-bottom: 50px;
 
 		.inner {
 			h2 {
-				width: 90%;
+				width: 100%;
 				font-size: 10vw;
 				top: 13%;
+				margin: 0;
 
 				.title_first {
 					margin-top: 20px;
@@ -329,6 +329,19 @@
 						width: 90%;
 					}
 				}
+			}
+
+			.img_first {
+				width: 50vw;
+				height: 30vw;
+				left: auto;
+				right: 5%;
+			}
+
+			.img_second {
+				width: 50vw;
+				height: 30vw;
+				top: 38%;
 			}
 
 			.btn {
