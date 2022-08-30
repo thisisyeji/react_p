@@ -27,7 +27,7 @@
 				opacity: 0;
 				transition: 1s;
 				z-index: 2;
-				margin-bottom: 3vw;
+				margin-bottom: 1vw;
 			}
 
 			.title_second {
@@ -118,7 +118,7 @@
 			background: #fff;
 			position: absolute;
 			bottom: 6vw;
-			right: 10vw;
+			right: 6vw;
 			z-index: 2;
 			padding-left: 5px;
 			border: 2px solid $orange;
@@ -200,7 +200,7 @@
 	#Intro {
 		.inner {
 			h2 {
-				bottom: 15vw;
+				bottom: 13vw;
 
 				.title_first {
 					margin-bottom: 50px;
@@ -213,12 +213,12 @@
 
 			.img_first {
 				height: 15vw;
-				bottom: 45vw;
+				bottom: 43vw;
 			}
 
 			.img_second {
 				height: 15vw;
-				bottom: 29vw;
+				bottom: 27vw;
 			}
 
 			.btn {
