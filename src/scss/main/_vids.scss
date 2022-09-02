@@ -149,7 +149,7 @@
 	}
 }
 
-@media screen and (max-width: $laptop) {
+@media screen and (max-width: $tablet) {
 	#Vids {
 		.banner {
 			span {
@@ -165,7 +165,7 @@
 	}
 }
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: $mobile_b) {
 	#Vids {
 		width: 100%;
 		.banner {

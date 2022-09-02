@@ -181,7 +181,7 @@
 	}
 }
 
-@media screen and (max-width: $laptop) {
+@media screen and (max-width: $tablet) {
 	.Location {
 		.inner {
 			padding: 10vw 5vw;
@@ -193,7 +193,7 @@
 	}
 }
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: $mobile_b) {
 	.Location {
 		.inner {
 			padding: 100px 30px;

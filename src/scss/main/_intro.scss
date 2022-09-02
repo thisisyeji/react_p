@@ -196,7 +196,7 @@
 	}
 }
 
-@media screen and (max-width: $laptop) {
+@media screen and (max-width: $tablet) {
 	#Intro {
 		.inner {
 			h2 {
@@ -232,7 +232,7 @@
 	}
 }
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: $mobile_b) {
 	#Intro {
 		width: 100%;
 		height: 100vh;

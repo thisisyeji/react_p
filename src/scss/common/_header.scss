@@ -243,7 +243,7 @@ header.sub {
 	}
 }
 
-@media screen and (max-width: $laptop) {
+@media screen and (max-width: $tablet) {
 	header {
 		#gnb {
 			display: none;
@@ -251,7 +251,7 @@ header.sub {
 	}
 }
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: $mobile_b) {
 	header {
 		position: fixed;
 		top: 0;

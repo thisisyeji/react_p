@@ -219,7 +219,7 @@
 	}
 }
 
-@media screen and (max-width: $laptop) {
+@media screen and (max-width: $tablet) {
 	#Pics {
 		.start {
 			p {
@@ -245,7 +245,7 @@
 	}
 }
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: $mobile_b) {
 	#Pics {
 		width: 100%;
 		margin-top: 200px;

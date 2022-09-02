@@ -186,7 +186,7 @@
 	}
 }
 
-@media screen and (max-width: $laptop) {
+@media screen and (max-width: $tablet) {
 	.Youtube {
 		.inner {
 			padding: 10vw 5vw;
@@ -202,7 +202,7 @@
 	}
 }
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: $mobile_b) {
 	.Youtube {
 		.inner {
 			margin-top: 500px;

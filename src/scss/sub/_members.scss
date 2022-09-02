@@ -156,7 +156,7 @@
 	}
 }
 
-@media screen and (max-width: $laptop) {
+@media screen and (max-width: $tablet) {
 	.Members {
 		h2 {
 			font-size: 70px;
@@ -190,7 +190,7 @@
 	}
 }
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: $mobile_b) {
 	.Members {
 		h2 {
 			font-size: 11vw;
