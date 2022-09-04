@@ -41,6 +41,7 @@ React JS로 제작한 개인 포트폴리오용 기업형 웹사이트입니다.
 
 ### What I learned
 
+- React 기본 활용
 - Redux & Redux-saga
 - 세로 스크롤 이벤트
 
