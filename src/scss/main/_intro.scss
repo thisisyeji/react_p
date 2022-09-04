@@ -2,8 +2,11 @@
 	width: calc(100% - 50px);
 	height: calc(100vh - 50px);
 	margin-bottom: 100px;
+	padding-top: 50px;
 	overflow: hidden;
 
+	position: relative;
+	top: -50px;
 	.inner {
 		width: 100%;
 		height: 100%;
@@ -198,6 +201,7 @@
 
 @media screen and (max-width: $tablet) {
 	#Intro {
+		margin-top: 100px;
 		.inner {
 			h2 {
 				bottom: 13vw;
@@ -223,6 +227,18 @@
 
 			.btn {
 				border: 1px solid $orange;
+				bottom: 10vw;
+				@keyframes blink {
+					0% {
+						bottom: 8vw;
+					}
+					60% {
+						bottom: 10vw;
+					}
+					100% {
+						bottom: 8vw;
+					}
+				}
 
 				&::after {
 					border: 1px solid $orange;
@@ -236,6 +252,8 @@
 	#Intro {
 		width: 100%;
 		height: 100vh;
+		margin-top: 50px;
+		padding-top: 0;
 		.inner {
 			padding: 50px 5vw 0;
 			h2 {
