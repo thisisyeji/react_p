@@ -43,12 +43,14 @@ React JS로 제작한 개인 포트폴리오용 기업형 웹사이트입니다.
 ### What I learned
 
 - React 기본 활용
-- Redux & Redux-saga
+- Redux와 Redux-saga
 - 세로 스크롤 이벤트
+- async, await와 axios 사용
 
 ### Reference
 
 - [Acqua di parma](https://www.acquadiparma.com/)
+- [Acqua di parma KOREA](https://www.acquadiparma.kr/)
 
 ## Author
 
