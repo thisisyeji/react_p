@@ -54,4 +54,4 @@ React로 제작한 개인 포트폴리오용 기업형 웹사이트입니다.
 
 ## Author
 
-- Github - [김예지 Yeji Kim](https://github.com/yjkim0109)
+- Github - [김예지 Yeji Kim](https://github.com/thisisyeji)
