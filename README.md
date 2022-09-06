@@ -30,7 +30,7 @@ React로 제작한 개인 포트폴리오용 기업형 웹사이트입니다.
 
 ### Links
 
-- Live Site URL: [https://yjkim0109.github.io/react_p](https://yjkim0109.github.io/react_p)
+- Live Site URL: [https://thisisyeji.github.io/react_p](https://thisisyeji.github.io/react_p)
 
 ## My process
 

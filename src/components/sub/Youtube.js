@@ -25,7 +25,7 @@ function Youtube() {
 							<div className='content'>
 								<div className='img'>
 									<img
-										src={data.snippet.thumbnails.maxres.url}
+										src={data.snippet.thumbnails.standard.url}
 										alt={data.snippet.title}
 									/>
 								</div>
